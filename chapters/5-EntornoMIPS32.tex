@@ -17,7 +17,7 @@ para el editor de código \textit{MIPS32}.
 Este editor es complementado por diferentes nodos presentes en la
 aplicación.
 
-\noindent Cuando el usuario abre un proyecto y desea editar su código,
+Cuando el usuario abre un proyecto y desea editar su código,
 debe seleccionar el archivo que desea modificar.
 Esto se consigue gracias a la herramienta \textbf{explorador}\ref{fig:jams-explorer-text-hover}, la cual
 muestra una representación en forma de árbol de la estructura del proyecto.
@@ -34,7 +34,7 @@ en el editor.
 \end{figure}
 
 
-\noindent El explorador presenta un menú contextual donde el usuario
+El explorador presenta un menú contextual donde el usuario
 puede ejecutar varias acciones sobre las carpetas y los archivos
 del proyecto.
 Una de las opciones más particulares es la opción de añadir o eliminar
@@ -48,7 +48,7 @@ y aparecerán en orden en el nodo \textbf{Archivos a ensamblar}.
 Cabe destacar que, como se verá más adelante, los el orden de ensamblaje
 importa, por lo que esta herramienta permite ordenarlos de una manera sencilla.
 
-\noindent Una vez el usuario haya abierto el archivo a editar, todo su código
+Una vez el usuario haya abierto el archivo a editar, todo su código
 aparecerá en la herramienta principal de la sección: \textbf{el visualizador
 de archivos}.
 Esta herramienta permite mostrar diferentes editores dependiendo del tipo
@@ -58,13 +58,13 @@ imágenes y editar archivos de texto.
 En el caso de estos últimos archivos, solo los archivos ensamblador presentan
 ayudas, como pueden ser el autocompletador, en resaltador o la documentación.
 
-\noindent El visualizador de archivos puede tener varios archivos abiertos
+El visualizador de archivos puede tener varios archivos abiertos
 al mismo tiempo.
 Cada archivo estará representado por una pestaña que podrá cerrarse.
 El usuario podrá arrastrar una de las pestañas a un lado del visualizador
 para mostrar dos o más editores al mismo tiempo.
 
-\noindent El editor de código \textit{MIPS32} puede considerarse un editor
+El editor de código \textit{MIPS32} puede considerarse un editor
 de texto \textbf{inteligente}: gracias a las librerías creadas en la sección
 anterior, es capaz de convertir el texto puro en los diferentes componentes
 ensamblador que representa.
@@ -75,7 +75,7 @@ Toda esta información puede ser visualizada por el usuario manteniendo
 durante un segundo el ratón encima de un elemento, como se puede observar
 en la figura \ref{fig:jams-explorer-text-hover}.
 
-\noindent Una vez la aplicación esté lista para su funcionamiento,
+Una vez la aplicación esté lista para su funcionamiento,
 el usuario deberá \textbf{crear una configuración} con todos los parámetros
 del ensamblador y del simulador deseados para ejecutar la aplicación.
 Esto se consigue pulsando el botón \textbf{configuración} en la parte
@@ -92,7 +92,7 @@ muchas opciones, como se puede observar en la figura \ref{fig:jams-configuration
     \label{fig:jams-configuration}
 \end{figure}
 
-\noindent Esta configuración será utilizable únicamente en el proyecto
+Esta configuración será utilizable únicamente en el proyecto
 donde se ha creado, y el usuario podrá crear por cada proyecto
 un número indeterminado de ellas.
 De esta manera, el usuario podrá probar su aplicación en una infinidad
@@ -101,7 +101,7 @@ configuración.
 El usuario podrá seleccionar la configuración que desea ejecutar en
 el menú desplegable inmediatamente a la izquierda del botón de configuración.
 
-\noindent Finalmente, el usuario podrá llamar al ensamblador pulsando el botón
+Finalmente, el usuario podrá llamar al ensamblador pulsando el botón
 \textbf{construir proyecto}, representado por un martillo verde.
 Una vez pulsado, el informe se desplegará y mostrará el resultado del ensamblador.
 Si el resultado es positivo y el código se ha ensamblado, una pestaña con
@@ -150,7 +150,7 @@ permitiendo al ensamblador entender los diferentes componentes de cada línea.
 Al final de este paso, las etiquetas globales y las etiquetas del archivo
 (etiquetas no definidas dentro de una macro) \textbf{son registradas sin
 ningún valor asignado}.
-\noindent Las macros de cada archivo también son registradas.
+Las macros de cada archivo también son registradas.
 El identificador de una macro es definido por su nombre concatenado-*
 al número de parámetros que necesitan.
 Este procedimiento se realiza para dar soporte a la sobrecarga de macros.
@@ -201,7 +201,7 @@ Si la macro es global, el alcance es considerado hijo del alcance global
 y no podrá acceder a las etiquetas del archivo que lo invoca.
 Si la macro es local, el alcance es considerado hijo del alcance del archivo.
 
-\noindent Cuando un alcance es hijo de otro alcance,
+Cuando un alcance es hijo de otro alcance,
 \textbf{el hijo podrá acceder a las etiquetas y macros de su padre}.
 El hijo también podrá definir nuevas etiquetas y macros con el mismo
 identificador que una etiqueta o macro de su padre.
@@ -313,7 +313,7 @@ La adición de directivas por parte de los componentes permite
 \textbf{modificar el comportamiento} del ensamblador, añadiendo
 nuevas funcionalidades a este.
 
-\noindent Añadir una instrucción o una directiva es muy sencillo en \textit{JAMS}:
+Añadir una instrucción o una directiva es muy sencillo en \textit{JAMS}:
 un componente únicamente debe añadir una nueva instrucción o
 una nueva directiva (representadas por clases) a un conjunto de
 instrucciones o directivas ya existente, o crear ese conjunto y registrarlo
@@ -321,7 +321,7 @@ con la \textit{API} de \textit{JAMS}.
 A este nuevo elemento se le puede añadir un nombre traducible y documentación
 a través de un paquete de idiomas.
 
-\noindent El ensamblador para el \textbf{procesador 6502} utilizado en el
+El ensamblador para el \textbf{procesador 6502} utilizado en el
 componente creado para el Trabajo de Fin de Grado del Grado en Diseño
 y Desarrollo de Videojuegos utiliza una arquitectura muy similar a la mostrada,
 teniendo únicamente diferencias en el tratamiento de referencias.
@@ -332,7 +332,7 @@ Un simulador es una pieza de \textit{software} que imita el comportamiento
 de un dispositivo.
 \textit{JAMS} implementa diversos simuladores para las diferentes
 arquitecturas \textit{MIPS32}.
-\noindent En \textit{JAMS} toma mucho más peso en enfoque de la
+En \textit{JAMS} toma mucho más peso en enfoque de la
 \textbf{simulación} a nivel de circuito, permitiendo al usuario
 conocer el funcionamiento de su aplicación en la arquitectura que desee.
 Esto no significa que \textit{JAMS} no optimice la ejecución de código:
@@ -393,23 +393,23 @@ este se mostrará en una pestaña aparte.
     \label{fig:jams-simulation}
 \end{figure}
 
-\noindent En la parte superior derecha se pueden encontrar los
+En la parte superior derecha se pueden encontrar los
 \textbf{botones de control} del simulador.
 Estos botones permiten empezar o parar la simulación, ejecutar un
 único ciclo, deshacer un ciclo o reiniciar por completo la simulación.
 Esta sección también contiene una barra deslizable que permite controlar
 la velocidad a la que se ejecuta la simulación.
 
-\noindent La ejecución del simulador es totalmente asíncrono, lo cual
+La ejecución del simulador es totalmente asíncrono, lo cual
 impide bloqueos de interfaz cuando una aplicación se está ejecutando.
 Todos los componentes y herramientas que desean acceder al simulador
 deberán sincronizarse con el hilo del simulador.
 
-\noindent El simulador tiene integrado \textbf{diversas herramientas} que complementan
+El simulador tiene integrado \textbf{diversas herramientas} que complementan
 el visualizador de instrucciones, permitiendo visualizar y modificar varios
 aspectos de la ejecución de un programa.
 
-\noindent El nodo más importante es la herramienta de \textbf{memoria},
+El nodo más importante es la herramienta de \textbf{memoria},
 la cual permite al usuario visualizar y editar el estado de la memoria
 de la memoria en el instante actual.
 El usuario puede seleccionar el \textbf{modo de representación} de los valores
@@ -429,19 +429,19 @@ informe completo sobre sus acciones.
     \label{fig:jams-memory-cache-flow}
 \end{figure}
 
-\noindent Otro nodo muy relevante es la herramienta \textbf{flujo},
+Otro nodo muy relevante es la herramienta \textbf{flujo},
 la cual registra el estado de todas las instrucciones en cada ciclo
 de ejecución.
 De esta manera, el usuario podrá saber de un vistazo qué flujo
 ha seguido su aplicación en la arquitectura seleccionada.
 
-\noindent Como último nodo crucial se encuentra la herramienta
+Como último nodo crucial se encuentra la herramienta
 \textbf{laboratorio}, la cual permite al usuario simular
 dos visualizadores de siete segmentos, un teclado hexadecimal
 y un contador, además de poder generar interrupciones \textit{hardware}
 y \textit{software}.
 
-\noindent El simulador cuenta con muchos nodos más, como es la
+El simulador cuenta con muchos nodos más, como es la
 herramienta \textbf{registros}, que permite visualizar y modificar
 todos los registros del simulador, la herramienta \textbf{etiquetas},
 que guarda las referencias de las etiquetas usadas por el usuario
@@ -482,7 +482,7 @@ La memoria de la arquitectura \textit{MIPS32} es una memoria de 4 GB
     \label{fig:memory-table}
 \end{figure}
 
-\noindent Reservar 4 GB de memoria para cada simulación no es una buena idea:
+Reservar 4 GB de memoria para cada simulación no es una buena idea:
 ocuparía una gran parte de la RAM de un computador y la gran mayoría no se utilizaría.
 Para evitar este problema existen varias técnicas para la
 implementación de la memoria:
@@ -492,7 +492,7 @@ implementación de la memoria:
     \item Partir las secciones en sub-secciones.
 \end{itemize}
 
-\noindent \textit{JAMS} implementa la segunda opción:
+\textit{JAMS} implementa la segunda opción:
 cada sección de memoria es separada en bloques de 4 KB.
 Estas secciones no serán reservadas en memoria
 hasta que sean necesarias.
@@ -521,7 +521,7 @@ si es necesario, accede a la memoria que tiene como referencia.
 Con esta sencilla arquitectura se genera una jerarquía de memorias
 muy similar a la que encontramos en computadores reales.
 
-\noindent Actualmente, \textit{JAMS} soporta tres tipos básicos
+Actualmente, \textit{JAMS} soporta tres tipos básicos
 de cachés: \textbf{cachés por correspondencia directa},
 \textbf{cachés asociativas} y \textbf{cachés asociativas por conjuntos}.
 Todos los tipos de cachés soportan tanto el modo \textit{write-back}
@@ -544,14 +544,14 @@ interrupciones, su ejecución termina de manera abrupta.
     \label{fig:jams-exception}
 \end{figure}
 
-\noindent Cuando varias interrupciones ocurren al mismo tiempo,
+Cuando varias interrupciones ocurren al mismo tiempo,
 estas se ejecutan de manera secuencial, teniendo más prioridad
 la interrupción \textbf{con mayor nivel}.
 Si una interrupción ocurre mientras el simulador está en el
 modo \textit{kernel}, esta se añade a la cola de interrupciones
 y se procesará cuando el simulador pase al modo usuario.
 
-\noindent Las interrupciones pueden clasificarse en interrupciones
+Las interrupciones pueden clasificarse en interrupciones
 \textit{software} e interrupciones \textit{hardware}:
 \begin{itemize}
     \item \textbf{Interrupciones \textit{software}:} permiten informar
@@ -568,7 +568,7 @@ y se procesará cuando el simulador pase al modo usuario.
     del punto de entrada del controlador de interrupciones.
 \end{itemize}
 
-\noindent El simulador gestiona las interrupciones usando la
+El simulador gestiona las interrupciones usando la
 implementación presentada en la figura \ref{fig:mips-exception-generator},
 extraída del documento
 \textit{MIPS® Architecture For Programmers Vol. III}\cite{MIPS_VOL_3},

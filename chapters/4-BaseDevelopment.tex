@@ -15,7 +15,7 @@ Más concretamente, se pueden desplegar dos nodos por cada lado del editor.
     \label{fig:jams-basic}
 \end{figure}
 
-\noindent Los nodos también se pueden configurar para que se desplieguen
+Los nodos también se pueden configurar para que se desplieguen
 en una ventana aparte.
 Esto permite poder desplegar un número indefinido de nodos al mismo tiempo.
 El modo de despliegue se puede configurar presionando el botón secundario sobre
@@ -50,7 +50,7 @@ proyectos abiertos.
 Si se cierran todos los proyectos, \textit{JAMS} cerrará el editor y trasladará
 al usuario a la ventana de inicio.
 
-\noindent Los proyectos presentan una lista de pestañas con todas las secciones
+Los proyectos presentan una lista de pestañas con todas las secciones
 que tienen abiertas.
 Normalmente, la primera pestaña representa el editor del proyecto, mientras que
 las siguientes representan las simulaciones que el usuario vaya creando.
@@ -62,7 +62,7 @@ las siguientes representan las simulaciones que el usuario vaya creando.
     \label{fig:jams-sections}
 \end{figure}
 
-\noindent Cada sección tiene una \textbf{barra de herramientas} propia.
+Cada sección tiene una \textbf{barra de herramientas} propia.
 Esta barra está situada a la izquierda de la lista de secciones, y permite
 ejecutar acciones relacionadas con la sección actual.
 
@@ -138,7 +138,7 @@ Un ejemplo de un archivo \textbf{language.json} sería el siguiente:
 }
 \end{lstlisting}
 
-\noindent Dentro de este archivo se encuentran los siguientes parámetros:
+Dentro de este archivo se encuentran los siguientes parámetros:
 \begin{itemize}
     \item \textbf{name:} es el nombre del idioma.
     Este nombre es el que será mostrado al usuario
@@ -150,7 +150,7 @@ Un ejemplo de un archivo \textbf{language.json} sería el siguiente:
     Esta propiedad es opcional y por defecto toma el valor 0.
 \end{itemize}
 
-\noindent Los archivos \textit{YAML} pueden estar en carpetas dentro del paquete,
+Los archivos \textit{YAML} pueden estar en carpetas dentro del paquete,
 y deben estar definidos en el archivo \textbf{language.json} con una
 dirección relativa a la raíz del paquete.
 Un ejemplo de archivo \textit{YAML} sería el siguiente:
@@ -188,7 +188,7 @@ de idioma.
 Si el paquete de idioma contiene un idioma nuevo, el usuario podrá seleccionarlo
 desde la configuración.
 
-\noindent \textit{JAMS} necesita que dos idiomas estén seleccionados al mismo tiempo:
+\textit{JAMS} necesita que dos idiomas estén seleccionados al mismo tiempo:
 el \textbf{idioma a mostrar} y el \textbf{idioma de respaldo}.
 El idioma de respaldo se usará cuando el idioma a mostrar no defina un mensaje
 necesario por la aplicación.
@@ -196,7 +196,7 @@ El usuario puede cambiar tanto el idioma a mostrar como el idioma de respaldo.
 Cuando un idiomas es eliminado y este está seleccionado, \textit{JAMS}
 buscará el idioma más adecuado para reemplazarlo.
 
-\noindent El cambio de idioma, al igual que el resto de los parámetros de configuración,
+El cambio de idioma, al igual que el resto de los parámetros de configuración,
 tienen un efecto \textbf{instantáneo} en la aplicación, por lo que no es necesario
 reiniciar la aplicación para que el cambio de idioma tenga efecto.
 
@@ -210,7 +210,7 @@ los temas son empaquetados en una carpeta o archivo comprimido,
 con un archivo \textit{JSON} que actúa como punto de entrada (\textbf{theme.json})
 y un conjunto de archivos \textit{CSS}.
 
-\noindent A diferencia de los idiomas, un desarrollador que implemente nuevos
+A diferencia de los idiomas, un desarrollador que implemente nuevos
 nodos a la escena de \textit{JAMS} no require gestionar ningún aspecto
 de los temas: el tema que el usuario tenga seleccionado será implementado
 de manera transparente gracias al sistema de temas de \textit{JavaFX}.
@@ -230,7 +230,7 @@ Un ejemplo de archivo theme.json sería el siguiente:
 }
 \end{lstlisting}
 
-\noindent Un archivo \textbf{theme.json} presenta los siguientes parámetros:
+Un archivo \textbf{theme.json} presenta los siguientes parámetros:
 \begin{itemize}
     \item \textbf{name:} es el nombre del tema.
     Este nombre es el que será mostrado al usuario
@@ -241,7 +241,7 @@ Un ejemplo de archivo theme.json sería el siguiente:
     Este parámetro es opcional.
 \end{itemize}
 
-\noindent Estén definidos o no las dependencias,
+Estén definidos o no las dependencias,
 todo tema depende del tema $Common$.
 Este tema actúa de base, y define el estilo básico de \textit{JAMS}.
 Este tema define muchas variables globales, pero no le asigna ningún
@@ -292,15 +292,15 @@ por lo que una capa de prioridades más es innecesaria.
 
 \subsection{Instalación y selección de un tema}\label{subsec:instalacion-y-seleccion-de-un-tema}
 
-\noindent Los usuarios pueden instalar un paquete de temas arrastrando la carpeta o
+Los usuarios pueden instalar un paquete de temas arrastrando la carpeta o
 archivo comprimido que lo contiene dentro de la carpeta \textbf{\textasciitilde/JAMS/themes}.
 Una vez hecho esto, \textit{JAMS} mostrará los cambios realizados por el paquete de temas.
 
-\noindent Si el paquete contiene un tema nuevo, el usuario podrá seleccionarlo desde la configuración.
+Si el paquete contiene un tema nuevo, el usuario podrá seleccionarlo desde la configuración.
 Cuando un tema es eliminado y este está seleccionado, \textit{JAMS}
 buscará el tema más adecuado para reemplazarlo.
 
-\noindent De la misma manera que en los idiomas, el cambio de tema tiene un
+De la misma manera que en los idiomas, el cambio de tema tiene un
 efecto \textbf{instantáneo} en la aplicación, por lo que no es necesario
 reiniciar la aplicación para que el cambio de tema tenga efecto.
 
@@ -320,7 +320,7 @@ Internamente, el sistema de configuraciones orbita
 alrededor de dos archivos \textit{JSON}\cite{JSON}:
 \textbf{el archivo de valores} y el \textbf{archivo de estructura}.
 
-\noindent El archivo de valores es el encargado de almacenar los valores de
+El archivo de valores es el encargado de almacenar los valores de
 todos los \textbf{nodos} de la configuración.
 Existe dos versiones de este archivo:
 el primero se encuentra en la carpeta \textbf{\textasciitilde/JAMS} y representa los \textbf{valores
@@ -338,7 +338,7 @@ Un componente podrá agregar nuevos valores a este archivo.
 }
 \end{lstlisting}
 
-\noindent El archivo de estructura o metadatos contiene información
+El archivo de estructura o metadatos contiene información
 relacionada sobre el propio nodo: el \textbf{tipo}, \textbf{región}
 y \textbf{nombre} de cada nodo están definidos en este archivo.
 Las secciones también tienen sus propios metadatos, especificando
@@ -376,7 +376,7 @@ parámetros al vuelo dentro de la aplicación.
 Esta interfaz es accesible directamente en la ventana de inicio o accediendo a ella
 mediante la opción \textbf{Archivo > Configuración}.
 
-\noindent Una vez la interfaz está abierta, el usuario encontrará dos nodos principales:
+Una vez la interfaz está abierta, el usuario encontrará dos nodos principales:
 la lista de secciones y el visualizador de secciones.
 La lista de secciones es un explorador que muestra todo el árbol de
 secciones presente actualmente en la configuración.
@@ -420,7 +420,7 @@ una acción solo se podrá ejecutar en un determinado contexto
 de la aplicación (el usuario no puede copiar un trozo de texto
 en el explorador).
 
-\noindent Los componentes pueden implementar nuevas acciones
+Los componentes pueden implementar nuevas acciones
 creando una nueva clase que extienda $Action$ o $ContextAction$.
 La clase $Action$ es la clase básica para las acciones.
 Las implementaciones deben implementar el funcionamiento
@@ -431,7 +431,7 @@ Las implementaciones de esta clase deben implementar
 muchos más métodos que proporcionan información
 sobre la viabilidad de la acción en diferentes contextos.
 
-\noindent Los usuarios pueden modificar los atajos de teclado
+Los usuarios pueden modificar los atajos de teclado
 asociados a una acción en el apartado \textbf{Acciones} de la
 configuración.
 Una acción puede estar vinculada a más de un atajo de teclado,
@@ -502,7 +502,7 @@ del modelo:
     \textit{Stream API}\cite{STREAM_API} añadida en \textit{Java 8}.
 \end{itemize}
 
-\noindent $EditorIndexedElement$ es la la interfaz principal
+$EditorIndexedElement$ es la la interfaz principal
 que representa un elemento.
 Esta interfaz define los elementos de posición, tamaño, alcance,
 jerarquía y contenido.
@@ -510,7 +510,7 @@ Los elementos concretos deben implementar esta interfaz.
 Una implementación básica de un elemento puede encontrarse
 en la clase $EditorIndexedElementImpl$.
 
-\noindent Si un elemento desea ser referenciado, este debe
+Si un elemento desea ser referenciado, este debe
 implementar la interfaz $EditorReferencedElement$.
 Un elemento que implemente esta interfaz será gestionado
 de manera diferente por el modelo.
@@ -521,7 +521,7 @@ Estas dos interfaces no son incompatibles:
 un elemento puede referenciar y ser referenciado
 al mismo tiempo.
 
-\noindent El modelo es un componente \textit{thread-safe}.
+El modelo es un componente \textit{thread-safe}.
 Para interactuar con él, un hilo debe reservar el acceso
 al modelo y especificar si desea editar su estructura o
 solo acceder a sus datos.
@@ -579,7 +579,7 @@ utilizada para editores de texto.
     }
 \end{center}
 
-\noindent Los nodos hoja pueden implementar la interfaz
+Los nodos hoja pueden implementar la interfaz
 $EditorIndexStyleableElement$, permitiendo inyectar
 estilos en la vista del editor de texto.
 Esta interfaz solo presenta un método que pide una lista
@@ -617,7 +617,7 @@ definida en la clase $EditorLineIndex$, la cual
 implementa un modelo donde cada línea representa una
 unidad autocontenida.
 
-\noindent Otras implementaciones serían la de elementos
+Otras implementaciones serían la de elementos
 básicos y comunes en diferentes lenguajes ensamblador:
 las etiquetas, las macros, las llamadas a macros o
 los comentarios son ejemplos de elementos ya definidos.
@@ -636,7 +636,7 @@ Esta interfaz tiene por defecto el estilo mostrado en la figura \ref{fig:jams-au
     \label{fig:jams-autocompletador}
 \end{figure}
 
-\noindent Igual que el propio editor de texto, esta interfaz
+Igual que el propio editor de texto, esta interfaz
 presenta una estructura modelo-vista-controlador:
 
 \begin{itemize}

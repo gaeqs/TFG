@@ -23,7 +23,7 @@ a ensamblar.
     \label{fig:jams-explorer}
 \end{figure}
 
-\noindent El explorador presenta las siguientes funcionalidades:
+El explorador presenta las siguientes funcionalidades:
 \begin{itemize}
     \item \textbf{Abrir archivos:} la principal funcionalidad del editor
     es poder abrir archivos en el editor.
@@ -44,7 +44,7 @@ a ensamblar.
     del ratón.
 \end{itemize}
 
-\noindent El explorador de archivos es un explorador específico
+El explorador de archivos es un explorador específico
 que le permite al usuario visualizar la estructura del proyecto
 actual.
 Este explorador mostrará sus elementos con un fondo diferente en
@@ -72,7 +72,7 @@ ver, ordenar, eliminar y modificar los \textbf{archivos que se van a ensamblar}.
     \label{fig:jams-files-to-assemble}
 \end{figure}
 
-\noindent Pueden haber tipos de proyecto donde el
+Pueden haber tipos de proyecto donde el
 orden de los archivos a ensamblar importe.
 Esta herramienta permite al usuario \textbf{ordenar los archivos}
 a ensamblar \textbf{arrastrándolos a la posición deseada}.
@@ -94,7 +94,7 @@ También le permite a otras herramientas informar sobre cambios de estados y err
     \label{fig:jams-log}
 \end{figure}
 
-\noindent El informe contiene dos botones con el que se puede interactuar:
+El informe contiene dos botones con el que se puede interactuar:
 \begin{itemize}
     \item El botón $C$ permite limpar el informe, eliminando todo el
     texto presente en él.
@@ -121,14 +121,14 @@ basadas en 32 bits.
     \label{fig:jams-memory}
 \end{figure}
 
-\noindent El primer desplegable de la herramienta permite elegir qué
+El primer desplegable de la herramienta permite elegir qué
 memoria se desea visualizar.
 La lista de memorias está ordenada por nivel, siendo la primera
 memoria la caché de nivel 1.
 Si la simulación no contiene ninguna caché,
 este desplegable solo mostrará la memoria principal.
 
-\noindent El segundo desplegable contiene diferentes opciones
+El segundo desplegable contiene diferentes opciones
 en las que los datos de la memoria se puede visualizar.
 Las opciones disponibles son las siguientes:
 
@@ -154,7 +154,7 @@ Las opciones disponibles son las siguientes:
     \item \textbf{Romano:} muestra cada valor como un número romano.
 \end{itemize}
 
-\noindent El usuario puede desplazarse a través de la herramienta
+El usuario puede desplazarse a través de la herramienta
 de diferentes maneras: \textbf{seleccionando una sección}
 en el tercer desplegable, \textbf{insertando una dirección}
 o \textbf{usando las flechas de movimiento}.
@@ -182,7 +182,7 @@ caché ha realizado junto con su resultado.
     \label{fig:jams-caches-stats}
 \end{figure}
 
-\noindent A diferencia de otras herramientas, el registro no se
+A diferencia de otras herramientas, el registro no se
 borra cuando se reinicia la simulación o se deshace un paso.
 La herramienta está diseñada así para poder visualizar fácilmente los cambios de la caché.
 
@@ -222,7 +222,7 @@ Los bits que controlan cada segmento son los siguientes:
     \label{fig:jams-seven-segment}
 \end{figure}
 
-\noindent Si, por ejemplo, se desea el dígito $5$ en el visualizador,
+Si, por ejemplo, se desea el dígito $5$ en el visualizador,
 se debe guardar en la dirección del byte el valor $0b01101101$.
 
 \begin{figure}[H]
@@ -232,7 +232,7 @@ se debe guardar en la dirección del byte el valor $0b01101101$.
     \label{fig:jams-seven-segment-active}
 \end{figure}
 
-\noindent Las \textbf{direcciones de memoria por defecto} que controlan los dos
+Las \textbf{direcciones de memoria por defecto} que controlan los dos
 visualizadores son la dirección $0xffff0010$ para el visualizador derecho y
 $0xffff0011$ para el visualizador izquierdo.
 Estos valores se pueden cambiar en la configuración,
@@ -248,12 +248,12 @@ Cuando el usuario pulsa uno de los botones,
 El programa puede interpretar el evento implementando un gestor
 de excepciones en la dirección por defecto $0x80000260$.
 
-\noindent Para saber qué \textbf{botones del teclado están activados},
+Para saber qué \textbf{botones del teclado están activados},
 se deben leer las direcciones de memoria por defecto $0xffff0013$ y $0xffff0014$.
 Cada bit de los dos bytes representan un botón en el teclado.
 Si un bit contiene el valor 1, el botón que representa está seleccionado.
 
-\noindent Como ejemplo: si el valor de la dirección de memoria
+Como ejemplo: si el valor de la dirección de memoria
 $0xffff0013$ es $0b00000100$ y el valor de la dirección de memoria
 $0xffff0014$ es $0b10000100$, los botones 2, A y F están seleccionados.
 
@@ -264,7 +264,7 @@ interrupciones \textit{software} como interrupciones \textit{hardware}.
 En el caso de las interrupciones \textit{software},
 la herramienta permite definir la causa de la interrupción.
 
-\noindent El contador es una pequeña herramienta
+El contador es una pequeña herramienta
 \textbf{que genera una interrupción \textit{hardware}}
 de nivel 2 cada cierto número de ciclos especificados por el usuario.
 Este valor se puede asignar desde la interfaz o escribiéndolo
@@ -284,7 +284,7 @@ entre el usuario y la aplicación.
     \label{fig:jams-console}
 \end{figure}
 
-\noindent El visualizador muestra los mensajes que la aplicación
+El visualizador muestra los mensajes que la aplicación
 imprime mediante llamadas del sistema.
 También muestra el resultado de la ejecución al terminar la simulación.
 La consola permite enviar mensajes a la aplicación mediante la barra de
@@ -294,7 +294,7 @@ hasta que la simulación los lea.
 El usuario \textbf{puede eliminar mensajes} de la cola
 pulsando el mensaje que quiere eliminar.
 
-\noindent La consola contiene tres botones con el que se puede interactuar:
+La consola contiene tres botones con el que se puede interactuar:
 \begin{itemize}
     \item El botón $C$ permite limpar el informe, eliminando todo el
     texto presente en él.
@@ -321,7 +321,7 @@ y puede desplazarse de manera sencilla arrastrando el ratón.
     \label{fig:jams-flow}
 \end{figure}
 
-\noindent El visualizador únicamente representa un número máximo de instrucciones.
+El visualizador únicamente representa un número máximo de instrucciones.
 Este número es por defecto $100$, y se puede cambiar en la configuración.
 El número de ciclo representado en la parte superior izquierda representa
 al \textbf{primer ciclo representado por el visualizador} de flujo.
@@ -339,7 +339,7 @@ que informa sobre aspectos generales del simulador.
     \label{fig:jams-information}
 \end{figure}
 
-\noindent La herramienta muestra los ciclos ejecutados,
+La herramienta muestra los ciclos ejecutados,
 instrucciones ejecutadas, tiempo de ejecución, ciclos por instrucción,
 ciclos por segundo e instrucciones por segundo de una simulación.
 Dependiendo del tipo de arquitectura, la simulación también podrá
@@ -357,7 +357,7 @@ utilizadas por en ensamblador para generar la simulación.
     \label{fig:jams-labels}
 \end{figure}
 
-\noindent Las etiquetas están \textbf{catalogadas por archivos}.
+Las etiquetas están \textbf{catalogadas por archivos}.
 Cada etiqueta contiene su dirección asignada,
 la línea en la que fue declarada en el archivo y las referencias.
 
@@ -373,7 +373,7 @@ de instrucciones o en la memoria.
 La herramienta de \textbf{registros} muestra información sobre
 los registros de la simulación.
 
-\noindent La herramienta consiste en una tabla de registros
+La herramienta consiste en una tabla de registros
 que muestra \textbf{4 valores}: el identificador del registro,
 su nombre canónico y su valor actual en decimal y hexadecimal.
 En el caso de los registros del coprocesador 0,
@@ -388,12 +388,12 @@ el valor se muestra en coma flotante y no en decimal.
     \label{fig:jams-registers}
 \end{figure}
 
-\noindent En arquitecturas avanzadas, los registros pueden ser
+En arquitecturas avanzadas, los registros pueden ser
 bloqueados por una instrucción.
 Cuando un registro está bloqueado, el icono de un candado \faLock \
 aparecerá junto con el identificador.
 
-\noindent El usuario puede \textbf{editar los valores de un registro}
+El usuario puede \textbf{editar los valores de un registro}
 haciendo doble clic en la casilla de valor
 o valor hexadecimal correspondiente.
 Al editar, el usuario puede insertar un valor en decimal,

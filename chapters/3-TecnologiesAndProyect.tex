@@ -13,7 +13,7 @@ Actualmente, existe una gran variedad de librerías y \textit{frameworks} gráfi
 crear aplicaciones de una manera rápida y sencilla.
 Estas tecnologías se pueden clasificar dependiendo de una gran cantidad de criterios.
 
-\noindent Según su nivel de abstracción:
+Según su nivel de abstracción:
 \begin{itemize}
     \item \textbf{Librerías de bajo nivel:} son más cercanas al \textit{hardware} gráfico.
     Permiten tener un gran control sobre los gráficos, pero no son adecuadas para
@@ -27,7 +27,7 @@ Estas tecnologías se pueden clasificar dependiendo de una gran cantidad de crit
     \textit{Compose Multiplatform}\cite{COMPOSE}.
 \end{itemize}
 
-\noindent Según su disponibilidad en varias plataformas:
+Según su disponibilidad en varias plataformas:
 \begin{itemize}
     \item \textbf{Librerías exclusivas:} son librerías que solo están disponibles en una plataforma.
     Algunos ejemplos de librerías exclusivas son \textit{Windows Forms}\cite{WINDOWSFORMS}
@@ -40,19 +40,19 @@ Estas tecnologías se pueden clasificar dependiendo de una gran cantidad de crit
     o \textit{Compose Multiplatform}.
 \end{itemize}
 
-\noindent Un aspecto muy importante al elegir candidatos es el \textbf{lenguaje de programación}
+Un aspecto muy importante al elegir candidatos es el \textbf{lenguaje de programación}
 en el que las librerías están disponibles.
 Las librerías de bajo nivel suelen estar disponibles en una gran variedad de lenguajes, mientras que las
 librerías de alto nivel suelen incorporar paradigmas propios del lenguaje de programación en el que están
 desarrolladas.
 
-\noindent Para el desarrollo de la aplicación se desea utilizar una librería gráfica \textbf{moderna},
+Para el desarrollo de la aplicación se desea utilizar una librería gráfica \textbf{moderna},
 \textbf{de alto nivel}, \textbf{multiplataforma}, disponible en un lenguaje de programación estable,
 con una comunidad grande y \textbf{rápido tanto en el desarrollo como en la ejecución}.
 Otro requisito crucial es que el lenguaje permita \textbf{vincular código externo} de manera
 sencilla y en \textbf{tiempo de ejecución}.
 
-\noindent Estos requisitos reduce la lista de tecnologías en los siguientes candidatos:
+Estos requisitos reduce la lista de tecnologías en los siguientes candidatos:
 \begin{itemize}
     \item \textbf{HTML, CSS y TypeScript:} este conjunto de tecnologías es muy popular actualmente
     para la creación de aplicaciones web y de escritorio. \textit{IDEs} muy famosos como
@@ -69,15 +69,15 @@ sencilla y en \textbf{tiempo de ejecución}.
     \textit{Kotlin}.
 \end{itemize}
 
-\noindent El trío \textit{HTML / CSS / TypeScript} suele ser una buena elección para editores y otras
+El trío \textit{HTML / CSS / TypeScript} suele ser una buena elección para editores y otras
 aplicaciones ligeras, pero la falta de velocidad en la ejecución y la falta de consistencia por estar
 basado \textit{TypeScript} en \textit{JavaScript} descarta esta opción por parte del simulador.
 
-\noindent \textit{Kotlin / Compose Multiplatform} es una elección muy sólida actualmente, pero esta
+\textit{Kotlin / Compose Multiplatform} es una elección muy sólida actualmente, pero esta
 tecnología seguía en fase \textit{beta} cuando este proyecto empezó, por lo que también ha quedado
 descartada.
 
-\noindent Finalmente, \textbf{se ha optado por utilizar el par de tecnologías \textit{Java / JavaFX}}
+Finalmente, \textbf{se ha optado por utilizar el par de tecnologías \textit{Java / JavaFX}}
 para el desarrollo de la aplicación, ya que cumple con todos los requisitos: \textit{Java} es un
 lenguaje de programación muy estable, multiplataforma y rápido tanto en la ejecución como en
 el desarrollo.
@@ -85,7 +85,7 @@ También es el lenguaje de programación con la comunidad de desarrolladores má
 \textit{JavaFX} es una alternativa moderna a \textit{Swing} que permite desarrollar aplicaciones
 fácilmente personalizables que se alejan del ya conocido estilo de interfaz \textit{Java}.
 
-\noindent Centrándose en otras tecnologías necesarias, se ha utilizado el entorno de desarrollo
+Centrándose en otras tecnologías necesarias, se ha utilizado el entorno de desarrollo
 \textit{Intellij IDEA}\cite{INTELLIJIDEA} y el sistema de
 automatización \textit{Gradle} para la construcción del proyecto.
 
@@ -97,12 +97,12 @@ Que la mayoría de aplicaciones \textit{Java} estén desarrolladas en versiones 
 \footnote{Estándar, sin modificar} de \textit{Swing} y en versiones de \textit{Java} de hace más
 de un lustro no ayuda en su reputación.
 
-\noindent La realidad es muy diferente: su equipo de desarrollo lleva años reinventando su tecnología,
+La realidad es muy diferente: su equipo de desarrollo lleva años reinventando su tecnología,
 con nuevas características que acercan a \textit{Java} a lenguajes de programación mucho más modernos.
 La velocidad de ejecución también se ha incrementado considerablemente, posicionándose en uno de los
 lenguajes de programación que más rápido ejecutan.
 
-\noindent Un gran ejemplo del drástico cambio que ha sufrido \textit{Java} en los últimos años son los
+Un gran ejemplo del drástico cambio que ha sufrido \textit{Java} en los últimos años son los
 \textit{records}: clases de datos que son inmutables.
 
 \begin{lstlisting}[language=Java,style=java,frame=single,label={lst:java-comparacion-18}]
@@ -110,7 +110,7 @@ public record Cat(String name, UUID owner) {
 }
 \end{lstlisting}
 
-\noindent El código equivalente en \textit{Java} 8 sería el siguiente:
+El código equivalente en \textit{Java} 8 sería el siguiente:
 
 \begin{lstlisting}[language=Java,style=java,frame=single,label={lst:java-comparacion-8}]
 public final class Cat {
@@ -146,14 +146,14 @@ public final class Cat {
 }
 \end{lstlisting}
 
-\noindent La nueva arquitectura basada en módulos que presenta las librerías de \textit{Java}
+La nueva arquitectura basada en módulos que presenta las librerías de \textit{Java}
 ayuda mucho en la distribución de aplicaciones de escritorio, pudiendo generar un instalador
 convencional que instala la aplicación junto con una versión local de la \textit{JVM} que no
 suele superar los 30 MB\cite{JPACKAGE}.
 Gracias a este sistema de distribución, la aplicación podrá contar con versiones
 de \textit{Java} actuales sin que los usuarios tengan que pasar por complejas instalaciones.
 
-\noindent Como dato final, existen muchas aplicaciones que se ejecutan sobre la \textit{JVM}
+Como dato final, existen muchas aplicaciones que se ejecutan sobre la \textit{JVM}
 sin que el usuario se de cuenta.
 Este es el caso de todos los \textit{IDEs} desarrollados por \textit{JetBrains}, los cuales
 usan la librería \textit{Swing} con un estilo avanzado, como se puede observar en la figura
@@ -175,11 +175,11 @@ sistema de automatización.
 
 \subsection{Tareas}\label{subsec:tareas}
 
-\noindent El elemento más importante del directorio raíz es el archivo \textbf{build.gradle}.
+El elemento más importante del directorio raíz es el archivo \textbf{build.gradle}.
 En él se especifican las dependencias y se define cómo el proyecto debe ser compilado.
 Las \textbf{tareas} son las encargadas de definir dicho comportamiento.
 
-\noindent Las dos tareas más importantes son las siguientes:
+Las dos tareas más importantes son las siguientes:
 \begin{itemize}
     \item \textbf{jpackage:} permite generar un instalador de la aplicación específico
     para la máquina que ejecuta la tarea.
@@ -189,7 +189,7 @@ Las \textbf{tareas} son las encargadas de definir dicho comportamiento.
     \textit{Java} y esté soportado por \textit{JavaFX}.
 \end{itemize}
 
-\noindent Para ejecutar estas tareas ha de usarse el \textit{script} $gradlew$.
+Para ejecutar estas tareas ha de usarse el \textit{script} $gradlew$.
 Este comando descargará \textit{Gradle} si es necesario y ejecutará
 la tarea pasada como argumento.
 Todos estos comportamientos están automatizados en \textit{GitHub}
@@ -200,13 +200,13 @@ mediante los \textit{scripts} dentro de la carpeta $.github$.
 Dentro de la carpeta $src$ están definidos los dos módulos principales del
 proyecto: $main$ y $test$.
 
-\noindent El módulo $main$ es el encargado de almacenar todo el código fuente
+El módulo $main$ es el encargado de almacenar todo el código fuente
 de la aplicación.
 Puede ser considerado el módulo más importante de todo el proyecto.
 El módulo $test$ define todas las pruebas unitarias que el módulo $main$
 debe superar para que la aplicación se compile con éxito.
 
-\noindent El código fuente almacenado en el módulo $main$ está separado en diferentes
+El código fuente almacenado en el módulo $main$ está separado en diferentes
 paquetes \textit{Java}:
 \begin{itemize}
     \item \textbf{collection:} contiene una serie de colecciones modificadas.
@@ -241,7 +241,7 @@ Un proyecto está formado por una carpeta y las siguientes propiedades:
     simulación.
 \end{itemize}
 
-\noindent Los proyectos son almacenados en carpetas.
+Los proyectos son almacenados en carpetas.
 Una carpeta de un proyecto tiene la siguiente estructura:
 
 \begin{center}
@@ -259,7 +259,7 @@ Una carpeta de un proyecto tiene la siguiente estructura:
     }
 \end{center}
 
-\noindent Cada proyecto tiene dos carpetas por defecto: \textbf{.jams} y
+Cada proyecto tiene dos carpetas por defecto: \textbf{.jams} y
 \textbf{Simulation Files}.
 La carpeta \textbf{.jams} contiene los datos del proyecto que \textit{JAMS}
 gestiona de manera automática.
