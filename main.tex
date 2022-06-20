@@ -1,13 +1,18 @@
-\documentclass[twoside,a4paper,11pt]{book}
-\usepackage[english]{babel}
+% Commented by Oscar \documentclass[twoside,a4paper,11pt]{book}
+\documentclass[twoside,spanish,a4paper,11pt]{book}
+% Commented by Oscar \usepackage[english]{babel}
 
 \usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+%% Added by Oscar
+\usepackage[spanish,es-tabla,english]{babel}
+% Commented by Oscar \usepackage[T1]{fontenc}
 \usepackage{url}
 \usepackage[pdftex]{graphicx}
 \usepackage{a4wide}
 \usepackage{geometry}
+%
 \usepackage[backend=bibtex]{biblatex}
+%
 \usepackage{hyperref}
 \usepackage{subfiles}
 \usepackage[normalsize]{subfigure}
@@ -120,7 +125,10 @@
 \linespread{1.2}
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
 
-\bibliography{main}
+%% Style changed by Oscar Robles.
+%\bibliographystyle{orobles}
+%
+\bibliography{main.bib}
 
 \begin{document}
     \include{chapters/Front}
@@ -140,5 +148,6 @@
     \include{chapters/5-EntornoMIPS32}
     \include{chapters/6-Resultados}
     \include{chapters/7-Conclusiones}
-    \printbibliography[title=Bibliografía]
+    % Commented by Oscar \printbibliography[title=Bibliografía]
+    \addcontentsline{toc}{chapter}{Bibliografía}
 \end{document}
