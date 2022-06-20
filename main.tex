@@ -25,6 +25,27 @@
 \usepackage{forest}
 \usepackage{fontawesome}
 
+% For notes, corrections and suggestions
+\definecolor{GRCOLOR}{rgb}{1,0.2,0.5}
+\definecolor{ODRCOLOR}{rgb}{0.2,0.75,0.25}
+\definecolor{LRCOLOR}{rgb}{0.2,0.3,1}
+\definecolor{MyDarkRed}{rgb}{0.6,0,0.0}
+
+\newcommand{\GR}[1] { \mycomment[PT]{#1}{GRCOLOR}}
+\newcommand{\ODR}[1]{ \mycomment[ODR]{#1}{ODRCOLOR}}
+\newcommand{\LR}[1]{ \mycomment[SM]{#1}{LRCOLOR}}
+
+\newcommand{\newGR}[1]{\textcolor{PTCOLOR}{\uline{#1}}} %\sout}
+\newcommand{\delGR}[1]{\textcolor{PTCOLOR}{\sout{#1}}} %\sout}
+\newcommand{\newODR}[1]{\textcolor{ODRCOLOR}{\uline{#1}}} %\sout}
+\newcommand{\delODR}[1]{\textcolor{ODRCOLOR}{\sout{#1}}} %\sout}
+\newcommand{\newLR}[1]{\textcolor{SMCOLOR}{\uline{#1}}} %\sout}
+\newcommand{\delLR}[1]{\textcolor{SMCOLOR}{\sout{#1}}} %\sout}
+\newcommand{\note}[1]{\textcolor{MyDarkRed}{#1}} %\sout}
+\newcommand{\deletenote}[1]{\textcolor{MyDarkRed}{\sout{#1}}} %\sout}
+
+
+
 \setcounter{tocdepth}{4}
 \setcounter{secnumdepth}{4}
 
