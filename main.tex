@@ -36,16 +36,16 @@
 \definecolor{LRCOLOR}{rgb}{0.2,0.3,1}
 \definecolor{MyDarkRed}{rgb}{0.6,0,0.0}
 
-\newcommand{\GR}[1] { \mycomment[PT]{#1}{GRCOLOR}}
+\newcommand{\GR}[1] { \mycomment[GR]{#1}{GRCOLOR}}
 \newcommand{\ODR}[1]{ \mycomment[ODR]{#1}{ODRCOLOR}}
-\newcommand{\LR}[1]{ \mycomment[SM]{#1}{LRCOLOR}}
+\newcommand{\LR}[1]{ \mycomment[LR]{#1}{LRCOLOR}}
 
-\newcommand{\newGR}[1]{\textcolor{PTCOLOR}{\uline{#1}}} %\sout}
-\newcommand{\delGR}[1]{\textcolor{PTCOLOR}{\sout{#1}}} %\sout}
+\newcommand{\newGR}[1]{\textcolor{GRCOLOR}{\uline{#1}}} %\sout}
+\newcommand{\delGR}[1]{\textcolor{GRCOLOR}{\sout{#1}}} %\sout}
 \newcommand{\newODR}[1]{\textcolor{ODRCOLOR}{\uline{#1}}} %\sout}
 \newcommand{\delODR}[1]{\textcolor{ODRCOLOR}{\sout{#1}}} %\sout}
-\newcommand{\newLR}[1]{\textcolor{SMCOLOR}{\uline{#1}}} %\sout}
-\newcommand{\delLR}[1]{\textcolor{SMCOLOR}{\sout{#1}}} %\sout}
+\newcommand{\newLR}[1]{\textcolor{LRCOLOR}{\uline{#1}}} %\sout}
+\newcommand{\delLR}[1]{\textcolor{LRCOLOR}{\sout{#1}}} %\sout}
 \newcommand{\note}[1]{\textcolor{MyDarkRed}{#1}} %\sout}
 \newcommand{\deletenote}[1]{\textcolor{MyDarkRed}{\sout{#1}}} %\sout}
 
