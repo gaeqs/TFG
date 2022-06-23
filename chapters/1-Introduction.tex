@@ -51,8 +51,8 @@ Estos se pueden clasificar de diferentes maneras.
 Tanto los simuladores como los emuladores pueden definirse como un
 programa de computador que imita el funcionamiento de uno o varios
 componentes \textit{hardware}.
-Un emulador o simulador puede imitar una arquitectura, permitiendo
-ejecutar aplicaciones ajenas a la arquitectura del computador principal.
+Un emulador o simulador \delODR{puede imitar}\newODR{imita a} una arquitectura, permitiendo
+ejecutar aplicaciones ajenas a la arquitectura del computador principal\note{Óscar:¿original más que principal? Además, no entiendo aquí lo de principal}.
 
 Es importante diferenciar los conceptos de \textbf{simulación}
 y \textbf{emulación} a la hora de crear un programa que ejecute
@@ -114,16 +114,20 @@ Específicamente, en este apartado se detallarán diferentes objetivos.
 
 La tecnología usada en un proyecto tiene mucho peso en el resultado final.
 Es por eso que se debe buscar un conjunto de tecnologías que permitan crear una aplicación
-moderna, multiplataforma y expansible.
+moderna, multiplataforma y expan\delODR{s}\newODR{d}ible.
 
 Este objetivo puede separarse en dos pasos:
 \begin{itemize}
     \item Buscar una lenguaje de programación con capacidad para crear aplicaciones modernas,
     que permita cargar código externo a voluntad y que tenga un buen rendimiento
     tanto en la ejecución como en el desarrollo.
-    \item Dentro de las posibilidades del lenguaje de programación seleccionado,
-    buscar un \textit{framework} de desarrollo de aplicaciones de escritorio
-    que permita desarrollar aplicaciones modernas y de gran calidad.
+    \item \delODR{Dentro de las posibilidades del lenguaje de programación seleccionado,
+    b}\newODR{B}uscar un \textit{framework} de desarrollo de aplicaciones de escritorio
+    que permita desarrollar aplicaciones modernas y de gran
+    calidad\newODR{, dentro de las posibilidades del lenguaje de
+      programación seleccionado}.\note{Óscar: no tengo claro qué
+      quiere decir aquí ``Buscar'' y me pregunto si eso es
+      medible. ¿``Seleccionar'' sería una opción viable?}
 \end{itemize}
 
 \subsection{Crear un entorno base y un \textit{framework} que permita implementar diferentes herramientas}
@@ -148,11 +152,11 @@ Para conseguir este resultado, se proponen los siguientes subobjetivos:
     \item Desarrollar una aplicación base en conjunto con una \textit{API} que pueda
     ser usada por las diferentes herramientas para tecnologías concretas.
     \item Desarrollar e investigar diferentes formatos que permitan guardar
-    y modificar los diferentes elementos estáticos de la aplicación, como lo son
-    los idiomas, los temas y la configuración.
+    y modificar los diferentes elementos estáticos de la aplicación, como \delODR{lo son}
+    los idiomas, los temas y la configuración\newODR{, por ejemplo}.
 \end{itemize}
 
-Este objetivo está altamente relacionado con los
+\newODR{Óscar: Yo creo que esto no hay que decirlo así: podemos comentarlo}Este objetivo está altamente relacionado con los
 objetivos principales del Trabajo de Fin de Grado del Grado en
 Diseño y Desarrollo de Videojuegos: desarrollar un \textbf{sistema de carga
 dinámica de componentes}, permitiendo al usuario activar y desactivar
