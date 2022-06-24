@@ -3,7 +3,7 @@
 En este capítulo se abordará la búsqueda, investigación y creación de las tecnologías
 básicas necesarias para el desarrollo de \textit{JAMS}, empezando por la búsqueda
 de un lenguaje de programación y \textit{framework} de aplicaciones gráficas adecuados
-para el proyecto, y terminando definiendo los componentes más básicos desarrollados
+para el proyecto, \delODR{y terminando definiendo}\newODR{así como la definición de} los componentes más básicos desarrollados
 para el entorno base.
 
 \section{Definición de los requisitos de las tecnologías candidatas}
@@ -48,14 +48,14 @@ desarrolladas.
 
 Para el desarrollo de la aplicación se desea utilizar una librería gráfica \textbf{moderna},
 \textbf{de alto nivel}, \textbf{multiplataforma}, disponible en un lenguaje de programación estable,
-con una comunidad grande y \textbf{rápido tanto en el desarrollo como en la ejecución}.
+con una comunidad grande y \textbf{rápid\delODR{o}\newODR{a} tanto en el desarrollo como en la ejecución}.
 Otro requisito crucial es que el lenguaje permita \textbf{vincular código externo} de manera
 sencilla y en \textbf{tiempo de ejecución}.
 
-Estos requisitos reduce la lista de tecnologías en los siguientes candidatos:
+Estos requisitos reduce\newODR{n} la lista de tecnologías \delODR{en}\newODR{a} los siguientes candidatos:
 \begin{itemize}
     \item \textbf{HTML, CSS y TypeScript:} este conjunto de tecnologías es muy popular actualmente
-    para la creación de aplicaciones web y de escritorio. \textit{IDEs} muy famosos como
+    para la creación de aplicaciones web y de escritorio. \textit{IDEs} muy \delODR{famosos}\newODR{conocidos} como
     \textit{Visual Studio Code} están desarrollados con estas tecnologías.
     \item \textbf{Kotlin / Compose Multiplatform:} \textit{Compose Multiplatform} es una librería gráfica
     para \textit{Kotlin}, un lenguaje de programación muy joven y potente que tiene el respaldo de
@@ -71,10 +71,10 @@ Estos requisitos reduce la lista de tecnologías en los siguientes candidatos:
 
 El trío \textit{HTML / CSS / TypeScript} suele ser una buena elección para editores y otras
 aplicaciones ligeras, pero la falta de velocidad en la ejecución y la falta de consistencia por estar
-basado \textit{TypeScript} en \textit{JavaScript} descarta esta opción por parte del simulador.
+basado \textit{TypeScript} en \textit{JavaScript} descarta esta opción por parte del simulador.\note{Óscar: a esta frase le falta algo. Dale una vuelta}
 
 \textit{Kotlin / Compose Multiplatform} es una elección muy sólida actualmente, pero esta
-tecnología seguía en fase \textit{beta} cuando este proyecto empezó, por lo que también ha quedado
+tecnología seguía en fase \textit{beta} cuando este proyecto empezó, por lo que también \delODR{ha quedado}\newODR{quedó}
 descartada.
 
 Finalmente, \textbf{se ha optado por utilizar el par de tecnologías \textit{Java / JavaFX}}
@@ -95,12 +95,12 @@ Muchos desarrolladores piensan que \textit{Java} es un lenguaje de programación
 y con el único propósito de crear aplicaciones \textit{Spring}.
 Que la mayoría de aplicaciones \textit{Java} estén desarrolladas en versiones \textit{vanilla}
 \footnote{Estándar, sin modificar} de \textit{Swing} y en versiones de \textit{Java} de hace más
-de un lustro no ayuda en su reputación.
+de un lustro no ayuda \delODR{en}\newODR{a} su reputación.
 
 La realidad es muy diferente: su equipo de desarrollo lleva años reinventando su tecnología,
 con nuevas características que acercan a \textit{Java} a lenguajes de programación mucho más modernos.
-La velocidad de ejecución también se ha incrementado considerablemente, posicionándose en uno de los
-lenguajes de programación que más rápido ejecutan.
+La velocidad de ejecución también se ha incrementado considerablemente, \delODR{posicionándose}\newODR{convirtiéndose} en uno de los
+lenguajes de programación que más rápido ejecuta\delODR{n}.
 
 Un gran ejemplo del drástico cambio que ha sufrido \textit{Java} en los últimos años son los
 \textit{records}: clases de datos que son inmutables.
@@ -110,7 +110,7 @@ public record Cat(String name, UUID owner) {
 }
 \end{lstlisting}
 
-El código equivalente en \textit{Java} 8 sería el siguiente:
+El código equivalente en \textit{Java} 8 sería el siguiente:\note{Si Java 8 es el antiguo, déjalo claro}
 
 \begin{lstlisting}[language=Java,style=java,frame=single,label={lst:java-comparacion-8}]
 public final class Cat {
@@ -176,7 +176,7 @@ sistema de automatización.
 \subsection{Tareas}\label{subsec:tareas}
 
 El elemento más importante del directorio raíz es el archivo \textbf{build.gradle}.
-En él se especifican las dependencias y se define cómo el proyecto debe ser compilado.
+En él se especifican las dependencias y se define cómo \newODR{se debe compilar} el proyecto \delODR{debe ser compilado}.
 Las \textbf{tareas} son las encargadas de definir dicho comportamiento.
 
 Las dos tareas más importantes son las siguientes:
