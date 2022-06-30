@@ -205,7 +205,7 @@ reiniciar la aplicación para que el cambio de idioma tenga efecto.
 
 Los temas de JAMS funcionan de la misma manera que el estilo de una página web:
 mediante archivos \textit{CSS}\cite{CSS}.
-funcionamiento de los temas es muy similar al funcionamiento de los idiomas:
+\newODR{El }funcionamiento de los temas es muy similar al funcionamiento de los idiomas:
 los temas son empaquetados en una carpeta o archivo comprimido,
 con un archivo \textit{JSON} que actúa como punto de entrada (\textbf{theme.json})
 y un conjunto de archivos \textit{CSS}.
@@ -283,7 +283,7 @@ Igual que los idiomas, los temas funcionan mediante extensiones.
 Todo paquete de temas es convertido en una extensión del tema que define.
 Si existen varios paquetes apuntando al mismo tema, los dos coexistirán
 como dos extensiones del mismo tema.
-Una gran diferencia a los idiomas es que las extensiones de los temas
+Una gran diferencia \newODR{respecto }a los idiomas es que las extensiones de los temas
 no tienen prioridad.
 \textit{JavaFX} sigue el estándar
 \textit{CSS}\footnote{\url{https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity\#how_is_specificity_calculated}}
@@ -339,7 +339,7 @@ Un componente podrá agregar nuevos valores a este archivo.
 \end{lstlisting}
 
 El archivo de estructura o metadatos contiene información
-relacionada sobre el propio nodo: el \textbf{tipo}, \textbf{región}
+relacionada sobre\note{Óscar: ``relacionada sobre'' no mola} el propio nodo: el \textbf{tipo}, \textbf{región}
 y \textbf{nombre} de cada nodo están definidos en este archivo.
 Las secciones también tienen sus propios metadatos, especificando
 el \textbf{nombre} de la sección y sus \textbf{regiones} con sus
@@ -402,7 +402,7 @@ Es el caso de las secciones de componentes y de acciones.
 \subsection{Secciones especiales}\label{subsec:secciones-especiales}
 
 La interfaz de la configuración permite que ciertas gestiones se
-gestionen de manera externa por un controlador diferente al de
+gestionen de manera externa por un controlador diferente al \delODR{de}\newODR{establecido}
 por defecto.
 Estas secciones tienen una estructura totalmente diferente a la
 del resto de secciones, lo que permite al usuario modificar
@@ -423,7 +423,7 @@ en el explorador).
 Los componentes pueden implementar nuevas acciones
 creando una nueva clase que extienda $Action$ o $ContextAction$.
 La clase $Action$ es la clase básica para las acciones.
-Las implementaciones deben implementar el funcionamiento
+Las implementaciones deben implementar \note{Óscar: ``Las implementaciones deben implementar'' no mola} el funcionamiento
 de la acción en el método $run$.
 La clase $ContextAction$ permite que la acción sea
 mostrada en un menú contextual.
@@ -481,6 +481,7 @@ El editor de texto presenta una arquitectura
 
 \subsection{Filosofía del modelo}\label{subsec:filosofía-del-modelo}
 
+\note{Óscar: hablar de esta parte}
 Debido a la gran complejidad de la arquitectura,
 se ha definido una filosofía en el desarrollo
 del modelo:
@@ -533,7 +534,7 @@ cuando termine la edición.
 
 Cuando el controlador sigue el siguiente
 protocolo cuando este recibe peticiones de modificación
-por parte del usuario:
+por parte del usuario:\note{Óscar: mucho ``cuando''}
 \begin{itemize}
     \item \textbf{Recolección:} las peticiones cercanas
     en el tiempo son registradas en una lista de peticiones.
@@ -548,8 +549,8 @@ por parte del usuario:
     \item \textbf{Actualización:} se genera una tarea
     asíncrona que modifica el modelo en base a las
     peticiones.
-    \item \textbf{Finalización:} una vez el modelo
-    es modificado, se envían una serie de eventos
+    \item \textbf{Finalización:} una vez \newODR{se ha modificado} el modelo
+    \delODR{es modificado}, se envían una serie de eventos
     a la vista para que esta actualice el estilo
     de las líneas visibles.
 \end{itemize}
@@ -561,7 +562,7 @@ un elemento tiene un padre y puede tener varios hijos.
 Cada elemento contiene su posición inicial en el archivo, la
 longitud de su representación y la representación en sí.
 Esta estructura puede considerarse una implementación de un
-\textit{Rope}\cite{ROPES}, una estructura de dastos muy
+\textit{Rope}\cite{ROPES}, una estructura de da\delODR{s}tos muy
 utilizada para editores de texto.
 
 \begin{center}
