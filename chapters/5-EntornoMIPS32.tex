@@ -44,9 +44,11 @@ se ha de proporcionar una manera de incluir o excluir archivos de
 la aplicación resultante.
 Con este simple sistema, el usuario podrá elegir qué archivos se debe ensamblar.
 Los archivos a ensamblar estarán marcados en \textbf{verde} en el explorador,
-y aparecerán en orden en el nodo \textbf{Archivos a ensamblar}.
-Cabe destacar que, como se verá más adelante, los el orden de ensamblaje
-importa, por lo que esta herramienta permite ordenarlos de una manera sencilla.
+y aparecerán en orden en el nodo \textbf{\delODR{A}\newODR{a}rchivos a ensamblar}.
+Cabe destacar que, como se verá más adelante, \delODR{los} el orden de ensamblaje
+\delODR{importa}\newODR{es importante}, por lo que esta herramienta
+permite ordenar\delODR{los} de una manera sencilla\newODR{ dichos
+  archivos}.
 
 Una vez el usuario haya abierto el archivo a editar, todo su código
 aparecerá en la herramienta principal de la sección: \textbf{el visualizador
@@ -55,7 +57,7 @@ Esta herramienta permite mostrar diferentes editores dependiendo del tipo
 de archivo abierto.
 En la versión sin componentes de \textbf{JAMS}, el editor permite visualizar
 imágenes y editar archivos de texto.
-En el caso de estos últimos archivos, solo los archivos ensamblador presentan
+En el caso de estos últimos \delODR{archivos}, solo los archivos ensamblador presentan
 ayudas, como pueden ser el autocompletador, en resaltador o la documentación.
 
 El visualizador de archivos puede tener varios archivos abiertos
@@ -75,14 +77,16 @@ Toda esta información puede ser visualizada por el usuario manteniendo
 durante un segundo el ratón encima de un elemento, como se puede observar
 en la figura \ref{fig:jams-explorer-text-hover}.
 
-Una vez la aplicación esté lista para su funcionamiento,
+Una vez la aplicación\note{Óscar: ``aplicación'' es un término que
+  aparece aquí de la nada, pero al que tú te refieres como si ya
+  hubieras hablado de ello. Aquí hay algo que explicar mejor} esté lista para su funcionamiento,
 el usuario deberá \textbf{crear una configuración} con todos los parámetros
 del ensamblador y del simulador deseados para ejecutar la aplicación.
 Esto se consigue pulsando el botón \textbf{configuración} en la parte
 superior derecha de la aplicación.
 En este menú, el usuario podrá seleccionar el tipo de arquitectura,
 el tipo de memoria, las llamadas a sistema que se desean usar,
-el número y tipos de caché que se desean utilizar, entre otras
+\newODR{o} el número y tipos de caché que se desean utilizar, entre otras
 muchas opciones, como se puede observar en la figura \ref{fig:jams-configuration}.
 
 \begin{figure}[h]
@@ -108,7 +112,8 @@ Si el resultado es positivo y el código se ha ensamblado, una pestaña con
 una simulación aparecerá en el proyecto, permitiendo al usuario simular
 el código que acaba de ensamblar.
 Cabe destacar que un usuario puede tener diferentes simulaciones abiertas
-al mismo tiempo, lo cual amplía las posibilidades de uso de la aplicación.
+al mismo tiempo, lo cual amplía las posibilidades de uso de la
+aplicación.\note{Óscar: ¿Y si el resultado no es positivo?}
 
 
 \section{Ensamblador \textit{MIPS32}}\label{sec:ensamblador-mips32}
@@ -151,7 +156,7 @@ Al final de este paso, las etiquetas globales y las etiquetas del archivo
 (etiquetas no definidas dentro de una macro) \textbf{son registradas sin
 ningún valor asignado}.
 Las macros de cada archivo también son registradas.
-El identificador de una macro es definido por su nombre concatenado
+El identificador de una macro es definido por su nombre concatena\newODR{n}do
 un carácter $-$ al número de parámetros que necesitan.
 Este procedimiento se realiza para dar soporte a la sobrecarga de macros.
 En el caso de la macro $print$, su identificador sería $print-1$.
@@ -321,7 +326,7 @@ con la \textit{API} de \textit{JAMS}.
 A este nuevo elemento se le puede añadir un nombre traducible y documentación
 a través de un paquete de idiomas.
 
-El ensamblador para el \textbf{procesador 6502} utilizado en el
+\note{Óscar: yo quitaría esto}El ensamblador para el \textbf{procesador 6502} utilizado en el
 componente creado para el Trabajo de Fin de Grado del Grado en Diseño
 y Desarrollo de Videojuegos utiliza una arquitectura muy similar a la mostrada,
 teniendo únicamente diferencias en el tratamiento de referencias.
@@ -332,7 +337,7 @@ Un simulador es una pieza de \textit{software} que imita el comportamiento
 de un dispositivo.
 \textit{JAMS} implementa diversos simuladores para las diferentes
 arquitecturas \textit{MIPS32}.
-En \textit{JAMS} toma mucho más peso en enfoque de la
+En \textit{JAMS} toma mucho más peso e\delODR{n}\newODR{l} enfoque de la
 \textbf{simulación} a nivel de circuito, permitiendo al usuario
 conocer el funcionamiento de su aplicación en la arquitectura que desee.
 Esto no significa que \textit{JAMS} no optimice la ejecución de código:
@@ -405,13 +410,13 @@ impide bloqueos de interfaz cuando una aplicación se está ejecutando.
 Todos los componentes y herramientas que desean acceder al simulador
 deberán sincronizarse con el hilo del simulador.
 
-El simulador tiene integrado \textbf{diversas herramientas} que complementan
+El simulador tiene integrad\delODR{o}\newODR{as} \textbf{diversas herramientas} que complementan
 el visualizador de instrucciones, permitiendo visualizar y modificar varios
 aspectos de la ejecución de un programa.
 
 El nodo más importante es la herramienta de \textbf{memoria},
 la cual permite al usuario visualizar y editar el estado de la memoria
-de la memoria en el instante actual.
+\delODR{de la memoria} en el instante actual.
 El usuario puede seleccionar el \textbf{modo de representación} de los valores
 de la memoria de entre una gran variedad, pudiendo elegir formatos
 muy usados como son el formato hexadecimal a formatos específicos
@@ -452,8 +457,8 @@ mensajes a la aplicación.
 
 \subsection{Aspectos técnicos}\label{subsec:aspectos-tecnicos}
 
-En esta sección se detallarán brevemente algunos aspectos técnicos
-del simulador.
+En esta sección se detallarán brevemente \delODR{algun}\newODR{l}os aspectos técnicos
+\newODR{más relevanes} del simulador.
 
 \subsubsection{Memoria}\label{subsubsec:memoria}
 
@@ -557,14 +562,14 @@ Las interrupciones pueden clasificarse en interrupciones
     \item \textbf{Interrupciones \textit{software}:} permiten informar
     al programa de errores o excepciones en la simulación.
     Este tipo de interrupciones deben contener una causa que
-    el programa puede leer.
+    el programa puede\note{Óscar: ¿pueda y no puede?} leer.
     Estas interrupciones son de nivel 1.
     \item \textbf{Interrupciones \textit{hardware}:} permiten informar
     al programa de eventos generados por los diferentes componentes
-    conectado al simulador.
-    Estas interrupciones están definidas por un nivel entre el
-    nivel 2 al 63.
-    Este nivel permite calcular la dirección de memoria
+    conectado\newODR{s} al simulador.
+    Estas interrupciones están definidas por \delODR{un nivel entre el}
+    nivel\newODR{es, definidos del} 2 al 63.
+    \delODR{Este nivel permite}\newODR{Estos niveles permiten} calcular la dirección de memoria
     del punto de entrada del controlador de interrupciones.
 \end{itemize}
 
