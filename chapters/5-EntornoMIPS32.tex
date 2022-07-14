@@ -77,11 +77,8 @@ Toda esta información puede ser visualizada por el usuario manteniendo
 durante un segundo el ratón encima de un elemento, como se observa
 en la figura \ref{fig:jams-explorer-text-hover}.
 
-Una vez la aplicación\note{Óscar: ``aplicación'' es un término que
-  aparece aquí de la nada, pero al que tú te refieres como si ya
-  hubieras hablado de ello. Aquí hay algo que explicar mejor} esté lista para su funcionamiento,
-el usuario deberá \textbf{crear una configuración} con todos los parámetros
-del ensamblador y del simulador deseados para ejecutar la aplicación.
+Antes de ensamblar el proyecto el usuario deberá \textbf{crear una configuración}
+con todos los parámetros del ensamblador y del simulador deseados.
 Esto se consigue pulsando el botón \textbf{configuración} en la parte
 superior derecha de la aplicación.
 En este menú, el usuario podrá seleccionar el tipo de arquitectura,
@@ -96,30 +93,33 @@ muchas opciones, como se puede observar en la figura \ref{fig:jams-configuration
     \label{fig:jams-configuration}
 \end{figure}
 
-Esta configuración será utilizable únicamente en el proyecto
+Esta configuración se utilizará únicamente en el proyecto
 donde se ha creado, y el usuario podrá crear por cada proyecto
-un número indeterminado de ellas.
-De esta manera, el usuario podrá probar su aplicación en una infinidad
-de configuraciones diferentes sin tener que generar un proyecto por cada
-configuración.
+un número indeterminado de configuraciones.
+De esta manera, el usuario podrá probar su proyecto en una infinidad
+de configuraciones diferentes sin tener que generar un proyecto
+diferente por cada configuración.
 El usuario podrá seleccionar la configuración que desea ejecutar en
-el menú desplegable inmediatamente a la izquierda del botón de configuración.
+el menú desplegable situado inmediatamente a la izquierda del
+botón de configuración.
 
 Finalmente, el usuario podrá llamar al ensamblador pulsando el botón
 \textbf{construir proyecto}, representado por un martillo verde.
-Una vez pulsado, el informe se desplegará y mostrará el resultado del ensamblador.
-Si el resultado es positivo y el código se ha ensamblado, una pestaña con
-una simulación aparecerá en el proyecto, permitiendo al usuario simular
-el código que acaba de ensamblar.
+Una vez pulsado, se desplegará un informe que mostrará el resultado del ensamblaje.
+Si el resultado es positivo y el código se ha ensamblado,
+aparecerá en el proyecto una nueva ventana de simulación,
+permitiendo al usuario simular el código que acaba de ensamblar.
+Si el resultado no es positivo, el informe mostrará el error producido
+por el ensamblador.
 Cabe destacar que un usuario puede tener diferentes simulaciones abiertas
 al mismo tiempo, lo cual amplía las posibilidades de uso de la
-aplicación.\note{Óscar: ¿Y si el resultado no es positivo?}
+aplicación.
 
 
 \section{Ensamblador \textit{MIPS32}}\label{sec:ensamblador-mips32}
 
 El ensamblador \textit{MIP32} de \textit{JAMS} es un ensamblador avanzado
-usado para ensamblar proyectos \textit{MIPS32}.
+útil para ensamblar proyectos \textit{MIPS32}.
 Este ensamblador soporta características avanzadas empleadas
 comúnmente al programar en ensamblador, como las macros,
 las etiquetas globales o las referencias relativas.
@@ -156,7 +156,7 @@ Al final de este paso, las etiquetas globales y las etiquetas del archivo
 (etiquetas no definidas dentro de una macro) \textbf{son registradas sin
 ningún valor asignado}.
 Las macros de cada archivo también son registradas.
-El identificador de una macro es definido por su nombre concatena\newODR{n}do
+El identificador de una macro se define por su nombre concatena\newODR{n}do
 un carácter $-$ al número de parámetros que necesitan.
 Este procedimiento se realiza para dar soporte a la sobrecarga de macros.
 En el caso de la macro $print$, su identificador sería $print-1$.
@@ -177,11 +177,9 @@ printJams-0
 
 \subsection{Expansión}\label{subsec:expansion}
 
-En este paso, las llamadas a macros son invocadas,
-insertando el código de la macro en la posición de la llamada.
-Este código efectúa el primer paso del ensamblador mientras es añadido.
-Al ser insertado justo después de la llamada, el código de la macro
-también será expandido.
+En este paso, se invocan las llamadas a las macros,
+insertando el código de cada macro en la posición de la llamada,
+expandiéndola y llevando a cabo el primer paso del ensamblaje.
 
 \begin{lstlisting}[frame=single,label={lst:expansion}]
 main:
@@ -218,7 +216,7 @@ Esta funcionalidad es llamada \textbf{ocultamiento o \textit{shadowing}}.
 
 Una vez el ensamblador haya expandido las macros,
 se asignan las direcciones de todas las instrucciones,
-etiquetas y directivas que requieran dirección.
+etiquetas y directivas que requieran una dirección.
 Estas direcciones se asignan de manera secuencial.
 Existen directivas que pueden modificar el flujo de la asignación,
 como es el caso de la directiva $.text$.
@@ -289,8 +287,8 @@ loop:
 
 \subsubsection{Macros anidadas}\label{subsubsec:macros-anidadas}
 
-Una macro puede ser definida dentro de otra macro.
-Esto es conocido como una \textbf{macro anidada}.
+Una macro puede ser definida dentro de otra macro,
+lo que se conoce como \textbf{macro anidada}.
 Esta macro solo podrá ser accedida en el alcance de la macro
 en la que está declarada.
 
@@ -313,10 +311,10 @@ text:   .asciiz %string
 
 Como detalle final, cabe destacar que este ensamblador es totalmente personalizable.
 Los componentes pueden añadir, eliminar y modificar las instrucciones y directivas
-que el ensamblador usa.
+utilizadas.
 La adición de directivas por parte de los componentes permite
-\textbf{modificar el comportamiento} del ensamblador, añadiendo
-nuevas funcionalidades a este.
+\textbf{modificar el comportamiento} del ensamblador, añadiéndole
+nuevas funcionalidades.
 
 Añadir una instrucción o una directiva es muy sencillo en \textit{JAMS}:
 un componente únicamente debe añadir una nueva instrucción o
@@ -325,11 +323,6 @@ instrucciones o directivas ya existente, o crear ese conjunto y registrarlo
 con la \textit{API} de \textit{JAMS}.
 A este nuevo elemento se le puede añadir un nombre traducible y documentación
 a través de un paquete de idiomas.
-
-\note{Óscar: yo quitaría esto}El ensamblador para el \textbf{procesador 6502} utilizado en el
-componente creado para el Trabajo de Fin de Grado del Grado en Diseño
-y Desarrollo de Videojuegos utiliza una arquitectura muy similar a la mostrada,
-teniendo únicamente diferencias en el tratamiento de referencias.
 
 \section{Simulador}\label{sec:simulador}
 
