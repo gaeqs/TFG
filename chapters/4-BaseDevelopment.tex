@@ -72,7 +72,7 @@ La barra inferior del editor es común a todas las secciones.
 En esta, se informa del último mensaje escrito en el \textbf{informe}.
 A la izquierda también se muestra la memoria que está usando actualmente
 \textit{JAMS}.
-Al estar creada la aplicación en \textit{Java}, esta utiliza un recolector
+Como la aplicación está creada en \textit{Java} utiliza un recolector
 de basura.
 Se puede forzar el paso del recolector de basura pulsando el panel que informa
 sobre el uso de memoria.
@@ -486,14 +486,13 @@ El editor de texto presenta una arquitectura
 Debido a la gran complejidad de la arquitectura,
 la filosofía del modelo de desarrollo está basada en una serie de reglas:
 \begin{itemize}
-    El modelo se basa en elementos.
+    \item El modelo se basa en elementos.
     Cada elemento representa un componente en el editor:
     un comentario, una instrucción, una etiqueta, etc.
     Los elementos son \textbf{casi inmutables}:
     solo se pueden modificar sus inspecciones, su alcance y su posición.
     \item Los elementos son recreados siempre que la línea asociada se edita.
-    \item Los elementos almacenan la mínima información
-    posible.
+    \item Los elementos almacenan la mínima información posible.
     Esta información debe buscarse empleando los métodos
     de consulta proporcionados por el modelo.
     \item Los métodos de consulta deben ejecutarse lo más rápido
@@ -510,13 +509,13 @@ Los elementos concretos deben implementar esta interfaz.
 Una implementación básica de un elemento puede encontrarse
 en la clase $EditorIndexedElementImpl$.
 
-Si un elemento desea ser referenciado, este debe
+Para que un elento pueda ser referenciado debe
 implementar la interfaz $EditorReferencedElement$.
 Un elemento que implemente esta interfaz será gestionado
 de manera diferente por el modelo.
-De igual manera, si un elemento desea referenciar
-otros elementos, este debe implementar la interfaz
-$EditorReferencingElement$.
+De igual manera, si se desea dotar a un elemento de la
+posibilidad de referenciar otros elementos,
+este debe implementar la interfaz $EditorReferencingElement$.
 Estas dos interfaces no son incompatibles:
 un elemento puede referenciar y ser referenciado
 al mismo tiempo.
@@ -531,25 +530,24 @@ cuando termine la edición.
 
 \subsection{Actualización del modelo}\label{subsec:actualizacion-del-modelo}
 
-Cuando el controlador sigue el siguiente
-protocolo cuando este recibe peticiones de modificación
-por parte del usuario:\note{Óscar: mucho ``cuando''}
+Cuando el controlador recibe peticiones de modificación
+por parte del usuario ejecuta el siguiente protocolo:
 \begin{itemize}
     \item \textbf{Recolección:} las peticiones cercanas
     en el tiempo son registradas en una lista de peticiones.
-    Esta lista es es procesada cuando el usuario deje
+    Esta lista se procesa cuando el usuario deja
     de enviar modificaciones.
     \item \textbf{Compresión:} se descartan las peticiones
     de modificación que no van a tener efecto en el modelo.
     El caso más común de modificaciones sin efecto sería
     el de una cadena de modificaciones en una misma línea:
     solo el estado de la línea en la modificación final
-    tendrá efecto en el modelo.
+    tendrá efecto.
     \item \textbf{Actualización:} se genera una tarea
-    asíncrona que modifica el modelo en base a las
+    asíncrona que modifica el modelo en función de las
     peticiones.
-    \item \textbf{Finalización:} una vez \newODR{se ha modificado} el modelo
-    \delODR{es modificado}, se envían una serie de eventos
+    \item \textbf{Finalización:} una vez modificado el modelo,
+    se envían una serie de eventos
     a la vista para que esta actualice el estilo
     de las líneas visibles.
 \end{itemize}
@@ -602,8 +600,8 @@ presentes en otros modelos}.
 Este es el caso de las etiquetas y macros globales.
 La clase $ProjectGlobalIndex$ permite la
 comunicación entre modelos, actuando de intermediador.
-Solo los elementos que están dentro de los archivos
-de la lista de archivos a ensamblar serán tomados en cuenta.
+Solo se tomarán en cuenta los elementos que están
+en la lista de archivos que hay que ensamblar.
 Para evitar interbloqueos, todas las modificaciones
 realizadas en un proyecto son gestionadas en el
 mismo hilo.
@@ -626,7 +624,7 @@ los comentarios son ejemplos de elementos ya definidos.
 
 \textit{JAMS} aprovecha los datos proporcionados por
 el modelo para implementar una interfaz de autocompletación
-que el usuario puede usar en el editor.
+que el usuario puede utilizar en el editor.
 Esta interfaz tiene por defecto el estilo mostrado en la figura \ref{fig:jams-autocompletador}.
 
 \begin{figure}[h]
@@ -657,10 +655,9 @@ presenta una estructura modelo-vista-controlador:
 
 Como característica final, el editor de texto presenta
 una interfaz de documentación que los proyectos
-pueden utilizar para documentar sus diferentes
-elementos.
+pueden utilizar para documentar sus elementos.
 Se puede acceder a la documentación con la secuencia por defecto
-\textbf{Ctrl + Q}, como se puede observar en la figura \ref{fig:jams-documentacion}.
+\textbf{Ctrl + Q}, como se observa en la figura \ref{fig:jams-documentacion}.
 
 \begin{figure}[h]
     \centering

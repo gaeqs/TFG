@@ -14,7 +14,7 @@ con sus componentes esenciales.
 
 \textit{JAMS} aprovecha la tecnología creada en el entorno base
 para el editor de código \textit{MIPS32}.
-Este editor es complementado por diferentes nodos presentes en la
+Este editor se complementa con diferentes nodos presentes en la
 aplicación.
 
 Cuando el usuario abre un proyecto y desea editar su código,
@@ -38,27 +38,27 @@ El explorador presenta un menú contextual donde el usuario
 puede ejecutar varias acciones sobre las carpetas y los archivos
 del proyecto.
 Una de las opciones más particulares es la opción de añadir o eliminar
-archivos de código al ensamblador.
+archivos de código a la lista de archivos fuente para ensamblar.
 Al ser \textit{JAMS} un entorno de desarrollo basado en \textbf{proyectos},
 se ha de proporcionar una manera de incluir o excluir archivos de
 la aplicación resultante.
-Con este simple sistema, el usuario podrá elegir qué archivos se debe ensamblar.
-Los archivos a ensamblar estarán marcados en \textbf{verde} en el explorador,
-y aparecerán en orden en el nodo \textbf{\delODR{A}\newODR{a}rchivos a ensamblar}.
-Cabe destacar que, como se verá más adelante, \delODR{los} el orden de ensamblaje
-\delODR{importa}\newODR{es importante}, por lo que esta herramienta
-permite ordenar\delODR{los} de una manera sencilla\newODR{ dichos
-  archivos}.
+Con este sistema tan sencillo, el usuario podrá elegir qué archivos se deben ensamblar.
+Los archivos que se ensamblarán estarán marcados en \textbf{verde} en el explorador,
+y aparecerán en orden en el nodo \textbf{archivos para ensamblar}.
+Como se verá más adelante, cabe destacar que el orden de ensamblaje
+es importante, por lo que esta herramienta permite ordenar de una manera
+sencilla dichos archivos.
 
-Una vez el usuario haya abierto el archivo a editar, todo su código
+Una vez el usuario haya abierto el archivo para editar, todo su código
 aparecerá en la herramienta principal de la sección: \textbf{el visualizador
 de archivos}.
 Esta herramienta permite mostrar diferentes editores dependiendo del tipo
 de archivo abierto.
 En la versión sin componentes de \textbf{JAMS}, el editor permite visualizar
 imágenes y editar archivos de texto.
-En el caso de estos últimos \delODR{archivos}, solo los archivos ensamblador presentan
-ayudas, como pueden ser el autocompletador, en resaltador o la documentación.
+En el caso de estos últimos, solo los archivos escritos en
+lenguaje ensamblador presentan ayudas, como pueden ser el autocompletador,
+el resaltador o la documentación.
 
 El visualizador de archivos puede tener varios archivos abiertos
 al mismo tiempo.
@@ -71,10 +71,10 @@ de texto \textbf{inteligente}: gracias a las librerías creadas en la sección
 anterior, es capaz de convertir el texto puro en los diferentes componentes
 ensamblador que representa.
 El editor también tiene conocimiento de las referencias y el alcance de
-todas las etiquetas y macros, tanto en el propio archivo a editar
-como en el resto de archivos a ensamblar.
+todas las etiquetas y macros, tanto en el propio archivo que se stá editando
+como en el resto de archivos que se van a ensamblar.
 Toda esta información puede ser visualizada por el usuario manteniendo
-durante un segundo el ratón encima de un elemento, como se puede observar
+durante un segundo el ratón encima de un elemento, como se observa
 en la figura \ref{fig:jams-explorer-text-hover}.
 
 Una vez la aplicación\note{Óscar: ``aplicación'' es un término que

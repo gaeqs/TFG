@@ -2,9 +2,9 @@
 
 En este capítulo se abordará la búsqueda, investigación y creación de las tecnologías
 básicas necesarias para el desarrollo de \textit{JAMS}, empezando por la búsqueda
-de un lenguaje de programación y \textit{framework} de aplicaciones gráficas adecuados
-para el proyecto, así como la definición de los componentes más básicos desarrollados
-para el entorno base.
+de un lenguaje de programación y un \textit{framework} de aplicaciones gráficas adecuados
+para el proyecto, y terminando con la definición
+de los componentes más básicos desarrollados para el entorno base.
 
 \section{Definición de los requisitos de las tecnologías candidatas}
 \label{sec:definicion-requisitos-tecnologías-candidatas}
@@ -18,11 +18,11 @@ Según su nivel de abstracción:
     \item \textbf{Librerías de bajo nivel:} son más cercanas al \textit{hardware} gráfico.
     Permiten tener un gran control sobre los gráficos, pero no son adecuadas para
     interfaces gráficas de usuarios.
-    Algunos ejemplos de librerías de bajo nivel son \textit{OpenGL}\cite{OPENGL},
+    Algunos ejemplos son \textit{OpenGL}\cite{OPENGL},
     \textit{Vulkan}\cite{VULKAN} o \textit{DirectX}\cite{DIRECTX}.
     \item \textbf{Librerías de alto nivel}: incorporan una capa de abstracción sobre el \textit{hardware} gráfico.
     Permiten generar interfaces gráficas de usuario mediante una arquitectura ya definida.
-    Algunos ejemplos de librerías de alto nivel son \textit{Qt}\cite{QT},
+    Algunos ejemplos son \textit{Qt}\cite{QT},
     \textit{JavaFX}\cite{JAVAFX}, \textit{Swing}\cite{SWING}, \textit{GTK} o
     \textit{Compose Multiplatform}\cite{COMPOSE}.
 \end{itemize}
@@ -30,17 +30,17 @@ Según su nivel de abstracción:
 Según su disponibilidad en varias plataformas:
 \begin{itemize}
     \item \textbf{Librerías exclusivas:} son librerías que solo están disponibles en una plataforma.
-    Algunos ejemplos de librerías exclusivas son \textit{Windows Forms}\cite{WINDOWSFORMS}
+    Algunos ejemplos son \textit{Windows Forms}\cite{WINDOWSFORMS}
     y \textit{DirectX} en \textit{Windows},
     \textit{Metal} y \textit{QuickDraw} en \textit{MacOS}
     o \textit{AndroidX/Graphics} y \textit{Jetpack Compose}\cite{COMPOSE}
     en \textit{Android}.
     \item \textbf{Librerías multiplataforma:} están disponibles en una gran variedad de plataformas.
-    Algunos ejemplos de librerías multiplataforma son \textit{Qt}, \textit{JavaFX}, \textit{Swing}, \textit{GTK}
+    Algunos ejemplos son \textit{Qt}, \textit{JavaFX}, \textit{Swing}, \textit{GTK}
     o \textit{Compose Multiplatform}.
 \end{itemize}
 
-Un aspecto muy importante al elegir candidatos es el \textbf{lenguaje de programación}
+Un aspecto muy importante en la elección es el \textbf{lenguaje de programación}
 en el que las librerías están disponibles.
 Las librerías de bajo nivel suelen estar disponibles en una gran variedad de lenguajes, mientras que las
 librerías de alto nivel suelen incorporar paradigmas propios del lenguaje de programación en el que están
@@ -69,13 +69,15 @@ Estos requisitos reducen la lista de tecnologías a los siguientes candidatos:
     \textit{Kotlin}.
 \end{itemize}
 
-El trío \textit{HTML / CSS / TypeScript} suele ser una buena elección para editores y otras
-aplicaciones ligeras, pero la falta de velocidad en la ejecución y la falta de consistencia por estar
-basado \textit{TypeScript} en \textit{JavaScript} descarta esta opción por parte del simulador.\note{Óscar: a esta frase le falta algo. Dale una vuelta}
+El trío \textit{HTML / CSS / TypeScript} suele ser una buena elección para
+editores y otras aplicaciones ligeras, pero su escasa velocidad de ejecución
+y su falta de consistencia debido a que \textit{TypeScript} está basado
+en \textit{JavaScript} descartan esta opción como candidata
+a desarrollar la aplicación.
 
-\textit{Kotlin / Compose Multiplatform} es una elección muy sólida actualmente, pero esta
-tecnología seguía en fase \textit{beta} cuando este proyecto empezó, por lo que también quedó
-descartada.
+\textit{Kotlin / Compose Multiplatform} es una elección muy sólida actualmente,
+pero esta tecnología seguía en fase \textit{beta} cuando comenzó el desarrollo
+de este trabajo fin de grado, por lo que también quedó descartada.
 
 Finalmente, \textbf{se ha optado por utilizar el par de tecnologías \textit{Java / JavaFX}}
 para el desarrollo de la aplicación, ya que cumple con todos los requisitos: \textit{Java} es un
@@ -97,10 +99,15 @@ Que la mayoría de aplicaciones \textit{Java} estén desarrolladas en versiones 
 \footnote{Estándar, sin modificar} de \textit{Swing} y en versiones de \textit{Java} de hace más
 de un lustro no ayuda a su reputación.
 
-La realidad es muy diferente: su equipo de desarrollo lleva años reinventando su tecnología,
-con nuevas características que acercan a \textit{Java} a lenguajes de programación mucho más modernos.
-La velocidad de ejecución también se ha incrementado considerablemente, convirtiéndose en uno de los
-lenguajes de programación que más rápido ejecutan.
+La realidad es muy diferente: su equipo de desarrollo lleva años reinventando
+su tecnología, con nuevas características que acercan a \textit{Java} a lenguajes
+de programación mucho más modernos.
+La velocidad de ejecución también se ha incrementado considerablemente,
+convirtiéndose en uno de los lenguajes de programación que más rápido ejecutan.
+
+Desgraciadamente, muchos desarrolladores están encasillados en la versión
+8 de \textit{Java} debido a cambios bruscos en la filosofía de desarrollo
+del lenguaje y a malas decisiones de \textit{Oracle}, la compañía desarrolladora.
 
 Un gran ejemplo del drástico cambio que ha sufrido \textit{Java} en los últimos años son los
 \textit{records}: clases de datos que son inmutables.
@@ -110,7 +117,7 @@ public record Cat(String name, UUID owner) {
 }
 \end{lstlisting}
 
-El código equivalente en \textit{Java} 8 sería el siguiente:\note{Si Java 8 es el antiguo, déjalo claro}
+El código equivalente en \textit{Java} 8 sería el siguiente:
 
 \begin{lstlisting}[language=Java,style=java,frame=single,label={lst:java-comparacion-8}]
 public final class Cat {
@@ -146,7 +153,7 @@ public final class Cat {
 }
 \end{lstlisting}
 
-La nueva arquitectura basada en módulos que presenta las librerías de \textit{Java}
+La nueva arquitectura basada en módulos que presentan las librerías de \textit{Java}
 ayuda mucho en la distribución de aplicaciones de escritorio, pudiendo generar un instalador
 convencional que instala la aplicación junto con una versión local de la \textit{JVM} que no
 suele superar los 30 MB\cite{JPACKAGE}.
@@ -202,7 +209,7 @@ proyecto: $main$ y $test$.
 
 El módulo $main$ es el encargado de almacenar todo el código fuente
 de la aplicación.
-Puede ser considerado el módulo más importante de todo el proyecto.
+Puede ser considerado el módulo más importante del proyecto.
 El módulo $test$ define todas las pruebas unitarias que el módulo $main$
 debe superar para que la aplicación se compile con éxito.
 
@@ -227,15 +234,16 @@ paquetes \textit{Java}:
 \section{Proyectos}\label{sec:interfaz-grafica}
 
 \textit{JAMS} es un \textit{IDE} basado en \textbf{proyectos}.
-Un proyecto está formado por una carpeta y las siguientes propiedades:
+Un proyecto está formado por una carpeta y una serie de propiedades
+que son las siguientes:
 \begin{itemize}
     \item \textbf{Tipo de proyecto:} especifica el tipo de proyecto.
     En una versión sin componentes este valor solo puede tomar el valor \textit{MIPS}.
     \item \textbf{Propiedades del proyecto:} parámetros necesarios por el tipo de proyecto.
-    Configuran aspectos concretos y generales de todo el proyecto.
-    \item \textbf{Archivos a ensamblar:} lista de archivos que el ensamblador tendrá en cuenta
+    Configuran aspectos concretos y generales del proyecto en su conjunto.
+    \item \textbf{Archivos para ensamblar:} lista de archivos que el ensamblador tendrá en cuenta
     al ensamblar el proyecto.
-    \item \textbf{Configuraciones:} especifican propiedades \textbf{de una ejecución} del proyecto.
+    \item \textbf{Configuraciones:} especifican propiedades \textbf{de la ejecución} del proyecto.
     Es decir, configuran el simulador.
     Un proyecto puede tener varias configuraciones, y el usuario ha de elegir una al crear una
     simulación.
@@ -265,8 +273,8 @@ La carpeta \textbf{.jams} contiene los datos del proyecto que \textit{JAMS}
 gestiona de manera automática.
 Esta carpeta está oculta y no debe ser modificada por el usuario.
 El archivo \textbf{data.json} contiene el tipo de proyecto y sus propiedades,
-mientras que \textit{files\_to\_assemble.json} contiene la listas de archivos
-que el ensamblador ha de usar.
+mientras que \textit{files\_to\_assemble.json} contiene la listas de archivos fuente
+que el ensamblador ha de procesar para crear la aplicación.
 La carpeta \textit{Simulation Files} actúa de carpeta raíz del simulador:
 todos los archivos que escriba o lea el simulador deben estar situados dentro
 de esta carpeta.
