@@ -330,12 +330,12 @@ Un simulador es una pieza de \textit{software} que imita el comportamiento
 de un dispositivo.
 \textit{JAMS} implementa diversos simuladores para las diferentes
 arquitecturas \textit{MIPS32}.
-En \textit{JAMS} toma mucho más peso e\delODR{n}\newODR{l} enfoque de la
+En \textit{JAMS} toma mucho más peso el enfoque de la
 \textbf{simulación} a nivel de circuito, permitiendo al usuario
 conocer el funcionamiento de su aplicación en la arquitectura que desee.
 Esto no significa que \textit{JAMS} no optimice la ejecución de código:
-todos los componentes están altamente optimizados, pudiendo llegar
-la simulación a una velocidad de 40 MHz.
+todos los componentes están altamente optimizados, pudiendo
+realizar simulaciones a una velocidad de 40 MHz.
 
 \subsection{Arquitecturas disponibles}\label{subsec:arquitecturas-disponibles}
 
@@ -344,7 +344,7 @@ en tres arquitecturas \textit{MIPS32} diferentes:
 \begin{itemize}
     \item \textbf{Uniciclo}: es la arquitectura más sencilla y
     mejor optimizada.
-    Ha sido creada con la velocidad en mente, optando por una
+    Se ha creado con la velocidad en mente, optando por una
     política de \textbf{cero liberación de memoria}: se crean los mínimos
     objetos posibles, y estos no se liberarán de la memoria hasta que
     la simulación haya terminado.
@@ -355,7 +355,7 @@ en tres arquitecturas \textit{MIPS32} diferentes:
     Es mucho más lenta que la arquitectura uniciclo, ya que requiere
     tener muchos más conceptos en cuenta.
     Las implementaciones de las ejecuciones en esta arquitectura
-    están pensadas para ser aprovechadas en arquitecturas más
+    se han diseñado para ser aprovechadas en arquitecturas más
     complejas, definiendo las lecturas y escrituras de sus
     registros y compartiendo una interfaz transparente para los saltos.
     \item \textbf{Segmentada con varias \textit{ALUs}}: simula
@@ -374,8 +374,8 @@ Independientemente de la arquitectura, todas las simulaciones presentan
 la misma estructura básica, idéntica en su base al editor.
 Al ejecutar una simulación, el usuario encuentra como nodo principal
 un \textbf{visualizador de instrucciones}, mostrado en la figura \ref{fig:jams-simulation}.
-Esta herramienta permite visualizar todas las instrucciones que se han
-ensamblado, junto a su dirección de memoria, su valor en hexadecimal y
+Esta herramienta permite visualizar todas las instrucciones ensambladas
+junto a su dirección de memoria, su valor en hexadecimal y
 su origen.
 El orden de estos valores se puede cambiar en la configuración.
 El visualizador también informa sobre las \textbf{instrucciones que se van
@@ -391,34 +391,34 @@ este se mostrará en una pestaña aparte.
     \label{fig:jams-simulation}
 \end{figure}
 
-En la parte superior derecha se pueden encontrar los
-\textbf{botones de control} del simulador.
+Los \textbf{botones de control} del simulador se encuentran
+en la parte superior derecha.
 Estos botones permiten empezar o parar la simulación, ejecutar un
 único ciclo, deshacer un ciclo o reiniciar por completo la simulación.
 Esta sección también contiene una barra deslizable que permite controlar
 la velocidad a la que se ejecuta la simulación.
 
-La ejecución del simulador es totalmente asíncrono, lo cual
+La ejecución del simulador es totalmente asíncrona, lo cual
 impide bloqueos de interfaz cuando una aplicación se está ejecutando.
-Todos los componentes y herramientas que desean acceder al simulador
+Todos los componentes y herramientas que accedan al simulador
 deberán sincronizarse con el hilo del simulador.
 
-El simulador tiene integrad\delODR{o}\newODR{as} \textbf{diversas herramientas} que complementan
-el visualizador de instrucciones, permitiendo visualizar y modificar varios
+El simulador tiene integradas \textbf{diversas herramientas} que complementan
+al visualizador de instrucciones, permitiendo visualizar y modificar varios
 aspectos de la ejecución de un programa.
 
 El nodo más importante es la herramienta de \textbf{memoria},
 la cual permite al usuario visualizar y editar el estado de la memoria
-\delODR{de la memoria} en el instante actual.
+en el instante actual.
 El usuario puede seleccionar el \textbf{modo de representación} de los valores
 de la memoria de entre una gran variedad, pudiendo elegir formatos
-muy usados como son el formato hexadecimal a formatos específicos
-como el \textit{RGB}.
+frecuentemente utilizados como por ejemplo el formato hexadecimal,
+o formatos específicos como el \textit{RGB}.
 Por último, esta herramienta también permite visualizar el \textbf{estado
 de las cachés} del simulador.
-Esta información es complementada por la herramienta \textbf{cachés},
-la cual informa sobre los fallos y aciertos de las cachés, además de un
-informe completo sobre sus acciones.
+Esta información se complementa mediante la herramienta \textbf{cachés},
+la cual informa sobre los fallos y aciertos de las cachés,
+además de presentar un informe completo sobre sus acciones.
 
 \begin{figure}[h]
     \centering
@@ -428,18 +428,18 @@ informe completo sobre sus acciones.
 \end{figure}
 
 Otro nodo muy relevante es la herramienta \textbf{flujo},
-la cual registra el estado de todas las instrucciones en cada ciclo
+que registra el estado de todas las instrucciones en cada ciclo
 de ejecución.
 De esta manera, el usuario podrá saber de un vistazo qué flujo
 ha seguido su aplicación en la arquitectura seleccionada.
 
 Como último nodo crucial se encuentra la herramienta
-\textbf{laboratorio}, la cual permite al usuario simular
+\textbf{laboratorio}, que permite al usuario simular
 dos visualizadores de siete segmentos, un teclado hexadecimal
 y un contador, además de poder generar interrupciones \textit{hardware}
 y \textit{software}.
 
-El simulador cuenta con muchos nodos más, como es la
+El simulador cuenta con muchos nodos más, como son la
 herramienta \textbf{registros}, que permite visualizar y modificar
 todos los registros del simulador, la herramienta \textbf{etiquetas},
 que guarda las referencias de las etiquetas usadas por el usuario
@@ -450,13 +450,13 @@ mensajes a la aplicación.
 
 \subsection{Aspectos técnicos}\label{subsec:aspectos-tecnicos}
 
-En esta sección se detallarán brevemente \delODR{algun}\newODR{l}os aspectos técnicos
-\newODR{más relevanes} del simulador.
+En esta sección se detallarán brevemente los aspectos técnicos
+más relevanes del simulador.
 
 \subsubsection{Memoria}\label{subsubsec:memoria}
 
-La memoria es la parte del simulador y ensamblador
-donde se guardan los datos y las instrucciones de una aplicación.
+La memoria es la parte del simulador donde se guardan los datos
+y las instrucciones de una aplicación.
 La memoria de la arquitectura \textit{MIPS32} es una memoria de 4 GB
 ($2^{32}$ bytes) separada en las siguientes secciones:
 
@@ -481,7 +481,8 @@ La memoria de la arquitectura \textit{MIPS32} es una memoria de 4 GB
 \end{figure}
 
 Reservar 4 GB de memoria para cada simulación no es una buena idea:
-ocuparía una gran parte de la RAM de un computador y la gran mayoría no se utilizaría.
+ocuparía una gran parte de la RAM de un computador y
+la mayor parte de ese espacio no se utilizaría.
 Para evitar este problema existen varias técnicas para la
 implementación de la memoria:
 \begin{itemize}
@@ -491,21 +492,20 @@ implementación de la memoria:
 \end{itemize}
 
 \textit{JAMS} implementa la segunda opción:
-cada sección de memoria es separada en bloques de 4 KB.
-Estas secciones no serán reservadas en memoria
-hasta que sean necesarias.
+cada sección de memoria se separa en bloques de 4 KB\@.
+Estas secciones no se reservan en memoria
+hasta que son necesarias.
 Con esta implementación, se reserva un array inicial de
 $2^{22}$ ($2^{32}$ / $2^{12}$) entradas, lo que equivaldría
-a unos simples 8 MB\@.
+a 8 MB\@.
 Según el uso de la memoria dentro del simulador,
-se irán reservando trozos de 4 KB\@.
+se irán reservando fragmentos adicionales de 4 KB\@.
 
 \subsubsection{Cachés}\label{subsubsec:caches}
 
-Las cachés son memorias más pequeñas y más rápidas que están
-situadas entre la memoria y el procesador.
-Los computadores actuales suelen tener varios niveles de caché,
-actuando unas sobre otras.
+Las cachés son memorias pequeñas y rápidas situadas entre
+la memoria y el procesador.
+Los computadores actuales suelen tener varios niveles de caché.
 En \textit{JAMS}, las memorias funcionan de manera muy similar.
 Tanto las cachés como las memorias implementan la interfaz $Memory$.
 Esta interfaz define los métodos de lectura y escritura.
@@ -513,9 +513,9 @@ Cuando un simulador necesita leer o escribir en la memoria,
 llama al método correspondiente en su memoria.
 Lo que no sabe el simulador es que su \textbf{memoria puede ser una caché}
 con una referencia a otra memoria.
-Cuando una caché es invocada en una operación de lectura o escritura,
-es ella la que gestiona la operación y,
-si es necesario, accede a la memoria que tiene como referencia.
+Cuando una se invoca a una caché en una operación de lectura o escritura,
+es ella quien gestiona la operación y,
+si es necesario, accede a la memoria de nivel inferior que tiene como referencia.
 Con esta sencilla arquitectura se genera una jerarquía de memorias
 muy similar a la que encontramos en computadores reales.
 
@@ -529,7 +529,7 @@ como el modo \textit{write-through}.
 
 Las interrupciones permiten informar sobre eventos al
 simulador.
-Cuando una interrupción sucede, el simulador entrará en el
+Cuando se produce una interrupción, el simulador entrará en el
 modo \textit{kernel}, saltando automáticamente al controlador
 de interrupciones proporcionado por el proyecto.
 Si la simulación no tiene implementado ningún controlador de
@@ -542,10 +542,10 @@ interrupciones, su ejecución termina de manera abrupta.
     \label{fig:jams-exception}
 \end{figure}
 
-Cuando varias interrupciones ocurren al mismo tiempo,
-estas se ejecutan de manera secuencial, teniendo más prioridad
+Cuando se producen varias interrupciones al mismo tiempo,
+son atendidas secuencialmente, teniendo más prioridad
 la interrupción \textbf{con mayor nivel}.
-Si una interrupción ocurre mientras el simulador está en el
+Si se produce una interrupción mientras el simulador está en el
 modo \textit{kernel}, esta se añade a la cola de interrupciones
 y se procesará cuando el simulador pase al modo usuario.
 
@@ -554,15 +554,15 @@ Las interrupciones pueden clasificarse en interrupciones
 \begin{itemize}
     \item \textbf{Interrupciones \textit{software}:} permiten informar
     al programa de errores o excepciones en la simulación.
-    Este tipo de interrupciones deben contener una causa que
-    el programa puede\note{Óscar: ¿pueda y no puede?} leer.
+    Este tipo de interrupciones se produce por excepciones
+    inherentes a la ejecución de las instrucciones que forman el programa.
     Estas interrupciones son de nivel 1.
     \item \textbf{Interrupciones \textit{hardware}:} permiten informar
     al programa de eventos generados por los diferentes componentes
-    conectado\newODR{s} al simulador.
-    Estas interrupciones están definidas por \delODR{un nivel entre el}
-    nivel\newODR{es, definidos del} 2 al 63.
-    \delODR{Este nivel permite}\newODR{Estos niveles permiten} calcular la dirección de memoria
+    conectados al simulador.
+    Estas interrupciones están definidas por
+    niveles, definidos del 2 al 63.
+    Estos niveles permiten calcular la dirección de memoria
     del punto de entrada del controlador de interrupciones.
 \end{itemize}
 
