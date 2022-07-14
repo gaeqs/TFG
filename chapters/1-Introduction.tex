@@ -5,27 +5,29 @@
 
 \subsection{La arquitectura \textit{MIPS}}\label{subsec:la-arquitectura-mips}
 
-Se  \delODR{les} conoce con el nombre de \textbf{procesadores \textit{MIPS}}\footnote{\newODR{Creado por \emph{MIPS Computer Systems}, en la actualidad \emph{MIPS Technologies}}}  a una familia de microprocesadores que implementan
+Se conoce con el nombre de \textbf{procesadores \textit{MIPS}}
+\footnote{Creado por \emph{MIPS Computer Systems}, en la actualidad \emph{MIPS Technologies}}
+a una familia de microprocesadores que implementan
 la arquitectura \textit{RISC} del mismo nombre.
 Aunque esta arquitectura no ha tenido un gran éxito en los computadores personales, sí ha gozado de fama en
-sistemas \delODR{embebidos}\newODR{empotrados}, enrutadores y videoconsolas como la \textit{Nintendo 64} o la \textit{PlayStation 2}. \note{y máquinas de Silicon Graphics; se usaban mucho: si ves documentales de ``así se hizo'' de Star Wars, hasta ``La Amenaza Fantasma'' incluida, los efectos especiales los hacían con máquinas SGI, y salen en los documentales}\\
+sistemas empotrados, enrutadores y videoconsolas como la \textit{Nintendo 64} o la \textit{PlayStation 2}. \note{y máquinas de Silicon Graphics; se usaban mucho: si ves documentales de ``así se hizo'' de Star Wars, hasta ``La Amenaza Fantasma'' incluida, los efectos especiales los hacían con máquinas SGI, y salen en los documentales}\\
 
 Su simple diseño y baja curva de aprendizaje hace a esta arquitectura ideal para introducir a los alumnos
-a los lenguajes ensamblador.
+a los lenguajes ensambladores.
 
 \subsection{\textit{IDEs}: entornos de desarrollo integrados}\label{subsec:ides-entornos-de-desarrollo-integrados}
 
 Un \textbf{entorno de desarrollo integrado} (\textit{IDE, Integrated Development Environment}) es una aplicación
-informática con diversas herramientas usad\delODR{o}\newODR{a}s en el desarrollo, construcción y depuración de \textit{software}.
-Un \textit{IDE} suele estar desarrollado con dos objetivos clave\delODR{s} en mente: maximizar la productividad del
+informática con diversas herramientas empleadas en el desarrollo, construcción y depuración de \textit{software}.
+Un \textit{IDE} suele estar desarrollado con dos objetivos clave en mente: maximizar la productividad del
 desarrollador y evitar que este tenga que utilizar herramientas externas en su trabajo.
 
-Existe una gran variedad de entornos de desarrollo\delODR{s} en el mercado.
+Existe una gran variedad de entornos de desarrollo en el mercado.
 Estos se pueden clasificar de diferentes maneras.
 
 \textbf{Según su propósito:}
 \begin{itemize}
-    \item \textbf{Entornos de desarrollo específicos:} son entornos pensados \delODR{en}\newODR{para} el desarrollo en una
+    \item \textbf{Entornos de desarrollo específicos:} son entornos pensados para el desarrollo en una
     tecnología concreta.
     Algunos ejemplos son \textit{NetBeans}, \textit{CLion} o \textit{Android Studio}.
     \item \textbf{Entornos de desarrollo generales:} son entornos que no se centran en una tecnología en concreto.
@@ -51,8 +53,8 @@ Estos se pueden clasificar de diferentes maneras.
 Tanto los simuladores como los emuladores pueden definirse como un
 programa de computador que imita el funcionamiento de uno o varios
 componentes \textit{hardware}.
-Un emulador o simulador \delODR{puede imitar}\newODR{imita a} una arquitectura, permitiendo
-ejecutar aplicaciones ajenas a la arquitectura del computador principal\note{Óscar:¿original más que principal? Además, no entiendo aquí lo de principal}.
+Un emulador o simulador imita a una arquitectura, permitiendo
+ejecutar aplicaciones ajenas a la arquitectura del computador anfitrión.
 
 Es importante diferenciar los conceptos de \textbf{simulación}
 y \textbf{emulación} a la hora de crear un programa que ejecute
@@ -96,8 +98,12 @@ Los principales problemas que presentan estas aplicaciones son los siguientes:
     \item \textbf{Obsolescencia}: las aplicaciones están desarrolladas con tecnologías antiguas,
     con interfaces similares a las de los programas de principio de siglo.
     \item \textbf{Falta de capacidad de expansión}: el problema más grave que presentan estas aplicaciones
-    es la nula capacidad de expansión de sus características, impidiendo que otros desarrolladores
+    es la poca capacidad de expansión de sus características, impidiendo que otros desarrolladores
     añadan nuevas funcionalidades de manera sencilla.
+    \textit{MARS} es de los pocos entornos de desarrollo que permite expandir
+    sus características mediante componentes,
+    aunque su funcionamiento es muy rudimentario: el usuario debe modificar el archivo ejecutable
+    para añadir nuevas herramientas.
 \end{itemize}
 
 
@@ -105,76 +111,67 @@ Los principales problemas que presentan estas aplicaciones son los siguientes:
 
 El objetivo principal de este proyecto es el desarrollo de \textbf{\textit{JAMS}
 (\textit{Just Another MIPS Simulator})}, un \textbf{entorno de desarrollo integrado ligero, expandible y moderno}
-centrado en los lenguajes ensamblador y, más concretamente, en el lenguaje ensamblador \textit{MIPS}.
-
+centrado en los lenguajes ensambladores y, más concretamente,
+en el lenguaje ensamblador de la arquitectura \textit{MIPS}.
 Específicamente, en este apartado se detallarán diferentes objetivos.
 
 \subsection{Investigar sobre las tecnologías más adecuados para el desarrollo}
 \label{subsec:investigar-sobre-las-tecnologias-mas-adecuados-para-el-desarrollo}
 
 La tecnología usada en un proyecto tiene mucho peso en el resultado final.
-Es por eso que se debe buscar un conjunto de tecnologías que permitan crear una aplicación
-moderna, multiplataforma y expan\delODR{s}\newODR{d}ible.
+Por ello, se debe buscar un conjunto de tecnologías que permitan crear una aplicación
+moderna, multiplataforma y expandible.
 
 Este objetivo puede separarse en dos pasos:
 \begin{itemize}
-    \item Buscar una lenguaje de programación con capacidad para crear aplicaciones modernas,
+    \item Elegir un lenguaje de programación con capacidad para crear aplicaciones modernas,
     que permita cargar código externo a voluntad y que tenga un buen rendimiento
     tanto en la ejecución como en el desarrollo.
-    \item \delODR{Dentro de las posibilidades del lenguaje de programación seleccionado,
-    b}\newODR{B}uscar un \textit{framework} de desarrollo de aplicaciones de escritorio
+    \item Buscar un \textit{framework} de desarrollo de aplicaciones de escritorio
     que permita desarrollar aplicaciones modernas y de gran
-    calidad\newODR{, dentro de las posibilidades del lenguaje de
-      programación seleccionado}.\note{Óscar: no tengo claro qué
-      quiere decir aquí ``Buscar'' y me pregunto si eso es
-      medible. ¿``Seleccionar'' sería una opción viable?}
+    calidad, dentro de las posibilidades del lenguaje de
+    programación seleccionado.\note{Óscar: no tengo claro qué
+    quiere decir aquí ``Buscar'' y me pregunto si eso es
+    medible. ¿``Seleccionar'' sería una opción viable?}
 \end{itemize}
 
 \subsection{Crear un entorno base y un \textit{framework} que permita implementar diferentes herramientas}
 \label{subsec:crear-un-entorno-base-y-un-framework-que-permita-implementar-diferentes-herramientas}
 
 \textit{JAMS} pretende ser un entorno de desarrollo completamente modificable.
-La mejor manera para conseguir esto es desarrollar una base genérica
+La mejor manera para conseguirlo es crear una base genérica
 que se pueda ajustar posteriormente al desarrollo de una tecnología en concreto.
 
 Esta base debe poder personalizar cualquier aspecto de la aplicación,
-desde poder modificar simples mensajes y parámetros hasta poder
-añadir nuevas herramientas.
-Estas modificaciones pueden venir de diferentes fuentes, como lo son
+desde modificar simples mensajes y parámetros hasta añadir nuevas herramientas.
+Estas modificaciones pueden venir de diferentes fuentes como
 los paquetes de idiomas, los paquetes de temas y los complementos.
 
 Por último, \textit{JAMS} debe permitir al usuario configurar los parámetros
 de la aplicación de manera sencilla, proporcionando una interfaz de configuración
-cómoda de usar.
+cómoda de utilizar.
 
 Para conseguir este resultado, se proponen los siguientes subobjetivos:
 \begin{itemize}
     \item Desarrollar una aplicación base en conjunto con una \textit{API} que pueda
-    ser usada por las diferentes herramientas para tecnologías concretas.
+    utilizarse por las diferentes herramientas para tecnologías concretas.
     \item Desarrollar e investigar diferentes formatos que permitan guardar
-    y modificar los diferentes elementos estáticos de la aplicación, como \delODR{lo son}
-    los idiomas, los temas y la configuración\newODR{, por ejemplo}.
+    y modificar los diferentes elementos estáticos de la aplicación, como
+    los idiomas, los temas y la configuración, por ejemplo.
 \end{itemize}
 
-\newODR{Óscar: Yo creo que esto no hay que decirlo así: podemos comentarlo}Este objetivo está altamente relacionado con los
-objetivos principales del Trabajo de Fin de Grado del Grado en
+\note{Óscar: Yo creo que esto no hay que decirlo así: podemos comentarlo}Este objetivo está relacionado con los
+objetivos del Trabajo de Fin de Grado del Grado en
 Diseño y Desarrollo de Videojuegos: desarrollar un \textbf{sistema de carga
-dinámica de componentes}, permitiendo al usuario activar y desactivar
-componentes a voluntad sin tener que reiniciar la aplicación y
+dinámica de componentes} que permita al usuario activar y desactivar
+componentes a voluntad sin tener que reiniciar la aplicación, así como
 desarrollar tecnologías que permitan \textbf{modificar}
 todos los aspectos de \textit{JAMS} mediante componentes.
-Aunque los objetivos de los dos Trabajos de Fin de Grado están
-correctamente definidos, los procesos de desarrollo para lograrlos están
-fuertemente vinculados.
-Es por este motivo por el que se mencionará mucho la idea de \textbf{componente}
-(un programa externo que modifica el comportamiento de una aplicación principal),
-aunque ninguno de los objetivos de este Trabajo de Fin de Grado requiera el
-desarrollo de estos.
 
 \subsection{Desarrollar un entorno de desarrollo para la arquitectura \textit{MIPS32}}
 \label{subsec:desarrollar-un-entorno-de-desarrollo-para-la-arquitectura-mips32}
 
-Una vez se tenga una base sólida, se ha de desarrollar un editor, un ensamblador
+Una vez se tenga una base sólida se desarollará un editor, un ensamblador
 y un simulador para la arquitectura \textit{MIPS32r6}.
 Estas tres tecnologías se apoyarán en diferentes herramientas que complementarán
 su utilización, como puede ser el caso del explorador en el editor y el visualizador
@@ -193,6 +190,7 @@ Este objetivo se desarrollará en dos pasos:
 Cabe destacar que no es un objetivo el permitir crear código válido para
 entornos \textit{MIPS} reales.
 
+
 \section{Metodología}\label{sec:metodologia}
 
 Debido a que la aplicación está dividida en tres secciones (tecnologías, base y entorno de desarrollo \textit{MIPS}),
@@ -200,7 +198,7 @@ es muy importante marcar una metodología que permita un desarrollo consistente,
 A nivel de desarrollo se ha optado por una metodología ágil, con \textit{sprints} de varios meses
 donde se desarrollan una serie de características claves.
 Todas las características se someten a varias iteraciones donde se modifican y mejoran hasta lograr un
-buen resultado.
+resultado idóneo.
 
 También se ha seguido un desarrollo basado en pruebas unitarias,
 permitiendo mantener la calidad del código mientras la aplicación va evolucionando.
@@ -209,8 +207,8 @@ Toda la metodología ha sido implementada mediante las herramientas proporcionad
 Los estados de las características asignadas a un \textit{sprint} son documentados mediante proyectos.
 Las acciones obligan a que las pruebas unitarias deban superarse sin errores si se desea añadir una nueva
 característica a la rama principal.
-Estas acciones también se emplean para generar los binarios cuando un \textit{sprint} es superado y una
-nueva versión de \textit{JAMS} es lanzada.
+Estas acciones también se emplean para generar los binarios cuando se supera un \textit{sprint}
+y se lanza una nueva versión de \textit{JAMS}.
 
 \begin{figure}[H]
     \centering
