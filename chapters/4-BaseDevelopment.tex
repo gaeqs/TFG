@@ -6,7 +6,8 @@
 La interfaz de \textit{JAMS} es muy similar a las interfaces que presentan los \textit{IDEs} modernos.
 Todas las herramientas están encapsuladas en $nodos$.
 Cada nodo se puede desplegar en los laterales del editor.
-Más concretamente, se pueden desplegar dos nodos por cada lado del editor.
+Más concretamente, se pueden desplegar dos nodos por cada lado del editor,
+como se observa en la figura \ref{fig:jams-basic}
 
 \begin{figure}[H]
     \centering
@@ -20,6 +21,7 @@ en una ventana aparte.
 Esto permite mantener desplegado un número indefinido de nodos simultáneamente.
 El modo de despliegue se puede configurar presionando
 el botón secundario del ratón sobre el botón del nodo.
+El resultado se muestra en la figura \ref{fig:jams-windows}.
 
 \begin{figure}[H]
     \centering
@@ -54,6 +56,7 @@ Los proyectos presentan una lista de pestañas con todas las secciones
 que tienen abiertas.
 Normalmente, la primera pestaña representa el editor del proyecto, mientras que
 las siguientes representan las simulaciones que el usuario vaya creando.
+Este comportamiento se puede observar en la figura \ref{fig:jams-sections}.
 
 \begin{figure}[H]
     \centering
@@ -86,8 +89,10 @@ En esta ventana se pueden encontrar cuatro apartados:
     \item \textbf{Proyectos:} en este apartado se encuentran los proyectos más
     recientes.
     También se puede abrir un proyecto ya existente.
+    Esa apartado se muestra en la figura \ref{fig:jams-main-projects}.
     \item \textbf{Nuevo proyecto:} este apartado permite crear nuevos proyectos.
     Un componente puede añadir su propio creador de proyectos.
+    Este apartado se muestra en la figura \ref{fig:jams-main-new-project}.
     \item \textbf{Configuración:} muestra la ventana de configuración.
     Permite configurar \textit{JAMS} antes de abrir un proyecto.
     \item \textbf{Acerca de:} muestra información básica sobre \textit{JAMS}.
@@ -302,7 +307,10 @@ buscará el tema más adecuado para reemplazarlo.
 
 De la misma manera que en los idiomas, el cambio de tema tiene un
 efecto \textbf{instantáneo} en la aplicación, por lo que no es necesario
-reiniciar la aplicación para que el cambio de tema tenga efecto.
+reiniciarla para que el cambio de tema tenga efecto.
+
+\textit{JAMS} incorpora tres temas por defecto: el tema oscuro, el tema `Darcula`
+y el tema claro mostrado en la figura \ref{fig:jams-light-theme}.
 
 \begin{figure}[H]
     \centering
@@ -325,7 +333,7 @@ todos los \textbf{nodos} de la configuración.
 Existe dos versiones de este archivo:
 la primera se encuentra en la carpeta \textbf{\textasciitilde/JAMS} y representa los \textbf{valores
 actuales de la configuración}.
-La segunda se encuentra dentro de la propia aplicación, y es el encargado de
+La segunda se encuentra dentro de la propia aplicación, y se encarga de
 proporcionar \textbf{los valores por defecto de cada nodo}.
 Un componente podrá agregar nuevos valores a este archivo.
 
@@ -383,7 +391,8 @@ secciones presente actualmente en la configuración.
 Hay algunas secciones que contienen sub-secciones, las cuales se pueden
 mostrar expandiendo la sección padre en la lista.
 El visualizador de secciones muestra todos los parámetros de configuración
-presentes en la sección seleccionada en la lista.
+presentes en la sección seleccionada en la lista, como se muestra en la
+figura \ref{fig:jams-configuracion}.
 Esta interfaz aprovecha los metadatos proporcionados por el archivo
 de estructura para proporcionar una interacción adecuada entre el usuario
 y los diferentes parámetros.
@@ -418,7 +427,7 @@ desde el menú principal, desde un menú de contexto
 o usando una combinación de teclas modificable.
 Cabe destacar que las acciones son \textbf{sensibles al contexto}:
 una acción solo se podrá ejecutar en un determinado contexto
-de la aplicación (el usuario no puede copiar un trozo de texto
+de la aplicación (por ejemplo, el usuario no puede copiar un trozo de texto
 en el explorador).
 
 Los componentes pueden implementar nuevas acciones
@@ -433,7 +442,7 @@ sobre la viabilidad de la acción en diferentes contextos.
 
 Los usuarios pueden modificar los atajos de teclado
 asociados a una acción en el apartado \textbf{Acciones} de la
-configuración.
+configuración, mostrado en la figura \ref{fig:jams-configuracion-acciones}.
 Una acción puede estar vinculada a más de un atajo de teclado,
 lo que le da más libertad de personalización al usuario.
 La ventana de acciones contiene una barra de búsqueda que
@@ -462,17 +471,17 @@ cantidad de líneas de texto sin bloquear la aplicación.
 El editor de texto presenta una arquitectura
 \textbf{Modelo-Vista-Controlador}:
 \begin{itemize}
-    \item \textbf{Vista:} la vista está gestionada
+    \item \textbf{Vista:} está gestionada
     por la librería \textit{RichTextFX}\cite{RICH_TEXT_FX}.
     \textit{RichTextFX} permite añadir estilos
     a secciones del texto.
     La vista está representada por la clase
     $CodeArea$.
-    \item \textbf{Controlador:} el controlador está
+    \item \textbf{Controlador:} está
     gestionado por la clase $CodeFileEditor$.
     Esta clase extiende $CodeArea$, y es la
     encargada de gestionar las entradas del usuario.
-    \item \textbf{Modelo:} el modelo está representado
+    \item \textbf{Modelo:} está representado
     por la clase $EditorIndex$.
     Las implementaciones de esta clase contienen
     una representación abstracta de los contenidos
@@ -491,7 +500,7 @@ la filosofía del modelo de desarrollo está basada en una serie de reglas:
     un comentario, una instrucción, una etiqueta, etc.
     Los elementos son \textbf{casi inmutables}:
     solo se pueden modificar sus inspecciones, su alcance y su posición.
-    \item Los elementos son recreados siempre que la línea asociada se edita.
+    \item Los elementos son recreados siempre que se edita la línea asociada.
     \item Los elementos almacenan la mínima información posible.
     Esta información debe buscarse empleando los métodos
     de consulta proporcionados por el modelo.
@@ -509,7 +518,7 @@ Los elementos concretos deben implementar esta interfaz.
 Una implementación básica de un elemento puede encontrarse
 en la clase $EditorIndexedElementImpl$.
 
-Para que un elento pueda ser referenciado debe
+Para que un elemento pueda ser referenciado debe
 implementar la interfaz $EditorReferencedElement$.
 Un elemento que implemente esta interfaz será gestionado
 de manera diferente por el modelo.
@@ -559,7 +568,7 @@ un elemento tiene un padre y puede tener varios hijos.
 Cada elemento contiene su posición inicial en el archivo, la
 longitud de su representación y la representación en sí.
 Esta estructura puede considerarse una implementación de un
-\textit{Rope}\cite{ROPES}, una estructura de da\delODR{s}tos muy
+\textit{Rope}\cite{ROPES}, una estructura de datos muy
 utilizada para editores de texto.
 
 \begin{center}

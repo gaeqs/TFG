@@ -71,7 +71,7 @@ de texto \textbf{inteligente}: gracias a las librerías creadas en la sección
 anterior, es capaz de convertir el texto puro en los diferentes componentes
 ensamblador que representa.
 El editor también tiene conocimiento de las referencias y el alcance de
-todas las etiquetas y macros, tanto en el propio archivo que se stá editando
+todas las etiquetas y macros, tanto en el propio archivo que se está editando
 como en el resto de archivos que se van a ensamblar.
 Toda esta información puede ser visualizada por el usuario manteniendo
 durante un segundo el ratón encima de un elemento, como se observa
@@ -83,7 +83,7 @@ Esto se consigue pulsando el botón \textbf{configuración} en la parte
 superior derecha de la aplicación.
 En este menú, el usuario podrá seleccionar el tipo de arquitectura,
 el tipo de memoria, las llamadas a sistema que se desean usar,
-\newODR{o} el número y tipos de caché que se desean utilizar, entre otras
+o el número y tipos de caché que se desean utilizar, entre otras
 muchas opciones, como se puede observar en la figura \ref{fig:jams-configuration}.
 
 \begin{figure}[h]
@@ -98,7 +98,7 @@ donde se ha creado, y el usuario podrá crear por cada proyecto
 un número indeterminado de configuraciones.
 De esta manera, el usuario podrá probar su proyecto en una infinidad
 de configuraciones diferentes sin tener que generar un proyecto
-diferente por cada configuración.
+distinto por cada configuración.
 El usuario podrá seleccionar la configuración que desea ejecutar en
 el menú desplegable situado inmediatamente a la izquierda del
 botón de configuración.
@@ -106,9 +106,9 @@ botón de configuración.
 Finalmente, el usuario podrá llamar al ensamblador pulsando el botón
 \textbf{construir proyecto}, representado por un martillo verde.
 Una vez pulsado, se desplegará un informe que mostrará el resultado del ensamblaje.
-Si el resultado es positivo y el código se ha ensamblado,
+Si el resultado es positivo y el código se ha ensamblado correctamente,
 aparecerá en el proyecto una nueva ventana de simulación,
-permitiendo al usuario simular el código que acaba de ensamblar.
+permitiendo al usuario simular el código resultante.
 Si el resultado no es positivo, el informe mostrará el error producido
 por el ensamblador.
 Cabe destacar que un usuario puede tener diferentes simulaciones abiertas
@@ -155,9 +155,9 @@ permitiendo al ensamblador entender los diferentes componentes de cada línea.
 Al final de este paso, las etiquetas globales y las etiquetas del archivo
 (etiquetas no definidas dentro de una macro) \textbf{son registradas sin
 ningún valor asignado}.
-Las macros de cada archivo también son registradas.
-El identificador de una macro se define por su nombre concatena\newODR{n}do
-un carácter $-$ al número de parámetros que necesitan.
+También se registran las macros de cada archivo.
+El identificador de una macro se define por su nombre concatenando
+un carácter `$-$' al número de parámetros que necesitan.
 Este procedimiento se realiza para dar soporte a la sobrecarga de macros.
 En el caso de la macro $print$, su identificador sería $print-1$.
 
@@ -407,11 +407,12 @@ El simulador tiene integradas \textbf{diversas herramientas} que complementan
 al visualizador de instrucciones, permitiendo visualizar y modificar varios
 aspectos de la ejecución de un programa.
 
-El nodo más importante es la herramienta de \textbf{memoria},
-la cual permite al usuario visualizar y editar el estado de la memoria
+El nodo más importante es la herramienta de \textbf{memoria}
+mostrada en la figura \ref{fig:jams-memory-cache-flow},
+que permite al usuario visualizar y editar el estado de la memoria
 en el instante actual.
 El usuario puede seleccionar el \textbf{modo de representación} de los valores
-de la memoria de entre una gran variedad, pudiendo elegir formatos
+de la memoria entre una gran variedad, pudiendo elegir formatos
 frecuentemente utilizados como por ejemplo el formato hexadecimal,
 o formatos específicos como el \textit{RGB}.
 Por último, esta herramienta también permite visualizar el \textbf{estado
@@ -427,11 +428,13 @@ además de presentar un informe completo sobre sus acciones.
     \label{fig:jams-memory-cache-flow}
 \end{figure}
 
-Otro nodo muy relevante es la herramienta \textbf{flujo},
+Otro nodo muy relevante es la herramienta \textbf{flujo}
+mostrada en la figura \ref{fig:jams-memory-cache-flow},
 que registra el estado de todas las instrucciones en cada ciclo
 de ejecución.
 De esta manera, el usuario podrá saber de un vistazo qué flujo
-ha seguido su aplicación en la arquitectura seleccionada.
+de ejecución de instrucciones ha seguido su aplicación
+en la arquitectura seleccionada.
 
 Como último nodo crucial se encuentra la herramienta
 \textbf{laboratorio}, que permite al usuario simular
@@ -533,7 +536,8 @@ Cuando se produce una interrupción, el simulador entrará en el
 modo \textit{kernel}, saltando automáticamente al controlador
 de interrupciones proporcionado por el proyecto.
 Si la simulación no tiene implementado ningún controlador de
-interrupciones, su ejecución termina de manera abrupta.
+interrupciones, su ejecución termina de manera abrupta,
+como se muestra en la figura \ref{fig:jams-exception}.
 
 \begin{figure}[h]
     \centering
@@ -561,7 +565,7 @@ Las interrupciones pueden clasificarse en interrupciones
     al programa de eventos generados por los diferentes componentes
     conectados al simulador.
     Estas interrupciones están definidas por
-    niveles, definidos del 2 al 63.
+    niveles, que van del 2 al 63.
     Estos niveles permiten calcular la dirección de memoria
     del punto de entrada del controlador de interrupciones.
 \end{itemize}

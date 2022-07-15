@@ -30,7 +30,7 @@ al usuario utilizar y producir temas e idiomas.
 \begin{itemize}
     \item \textbf{Velocidad}: \textit{JAMS} es capaz de ejecutar
     una simulación a un máximo de \textbf{40 millones de instrucciones por segundo} en un
-    procesador \textit{AMD Ryzen 7 2700X}.
+    procesador \textit{AMD Ryzen 7--2700X}.
     Esta velocidad, aunque supere con creces a la mayoría de simuladores \textit{MIPS32},
     puede impedir ejecutar aplicaciones que requieran de una gran capacidad de cómputo.
     \item \textbf{Soporte para MIPS32r5}: actualmente, \textit{JAMS} solo da soporte
@@ -41,20 +41,17 @@ al usuario utilizar y producir temas e idiomas.
     goce de una arquitectura totalmente personalizable,
     aún no tiene la opción de cargar componentes.
     \item \textbf{Editor de texto}: al no poseer \textit{JavaFX} de un editor
-    de texto capaz de inyectar estilos a secciones sel texto se ha tido que
+    de texto capaz de inyectar estilos a secciones del texto, ha sido necesario
     utilizar una librería externa poco amigable con el desarrollador y difícil
     de depurar.
-    Este motivo, juntado con la dificultad de hacer un editor de texto inteligente,
-    ha hecho que el desarrollo del editor sufriera varias iteraciones y
-    cuente todavía con varios fallos en casos extremos.
     Si se volviera a rehacer el proyecto se crearía una librería propia para
     el editor de texto.
     \item \textbf{Falta de arquitecturas}: \textit{JAMS} permite simular
-    un proyecto en tres arquitecturas diferentes: uniciclo, multiciclo y segmentado.
+    un proyecto en tres arquitecturas diferentes: uniciclo, multiciclo y segmentada.
     Al comienzo del proyecto estaba planeado el incluir muchas más arquitecturas,
-    como son las arquitecturas con planificación dinámica de instrucciones.
-    Estas características no han sido implementadas en el proyecto por
-    falta de tiempo y por la gran dificultad que conlleva su desarrollo.
+    como lo son las arquitecturas con planificación dinámica de instrucciones,
+    las arquitecturas con estructuras \textit{hardware} para la predicción de salto
+    o arquitecturas superescalares.
 \end{itemize}
 
 \section{Líneas futuras}\label{sec:líneas-futuras}
@@ -83,12 +80,34 @@ Fin de Grado que sería de gran interés poner el desarrollo:
     muchos aspectos de \textit{JAMS}, como son el editor o el simulador.
     Estas nuevas características empezarán su desarrollo cuando esta
     tecnología esté en fase \textit{preview}.
+    \item \textbf{Mejorar el simulador de caché}: actualmente,
+    \textit{JAMS} solo incorpora cachés para la región de datos.
+    Una línea futura sería incorporar cachés para la región
+    de instrucciones, o permitir al usuario definir las regiones
+    de memoria en las que actúan las cachés.
+    \item \textbf{Añadir nuevas arquitecturas}: como se ha mencionado
+    antes, \textit{JAMS} incluye tres arquitecturas básicas: uniciclo,
+    multiciclo y segmentada.
+    Una próxima actualización podría incluir nuevas arquitecturas al
+    simulador, como lo son las arquitecturas con planificación dinámica de instrucciones,
+    las arquitecturas con estructuras \textit{hardware} para la predicción de salto
+    o arquitecturas superescalares.
+    \item \textbf{Modo línea de comandos}: el funcionamiento de \textit{JAMS}
+    depende totalmente de la interfaz gráfica.
+    Una posible actualización podría añadir la capacidad de
+    ensamblar y simular desde la línea de comandos, permitiendo
+    automatizar diversas tareas.
+    \item \textbf{Compilador cruzado con otros lenguajes de programación}:
+    una funcionalidad interesante para añadir en un futuro sería la
+    capacidad de permitir a diversos compiladores interactuar con
+    \textit{JAMS}, haciendo posible realizar compilaciones cruzadas
+    con lenguajes como \textit{C}, \textit{C++} o \textit{Rust}.
 \end{itemize}
 
 
 \section{Reflexiones finales}\label{sec:reflexiones-finales}
 
-Este ha sido el proyecto más complejo en el que he trabajo:
+Este ha sido el proyecto más complejo en el que he trabajado:
 \textit{JAMS} abarca un montón de conceptos y tecnologías,
 desde la simulación de arquitecturas hasta el despliegue de
 aplicaciones automatizado, pasando por el renderizado a tiempo
